@@ -1,34 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
 	<meta name="generator" content="Hugo 0.108.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h3>Syed Zainulabideen</h3>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="https://syedzainulabideen.github.io/posts">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#"><button>Download Resume</button></a>
+    </header>
+  </body>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+    }
 
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: white;
+      text-decoration: none;
+    }
 
-	<title>Syed Zainulabideen</title>
+    li, a, button {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
+    }
 
-	<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 10%;
+    }
 
-	<link rel="alternate" type="application/rss+xml" href="https://syedzainulabideen.github.io/index.xml" title="Syed Zainulabideen" />
-	</head>
+    .logo {
+      background-color: yellow;
+    }
 
-<body>
+    .nav__links {
+      list-style: none;
+    }
 
-<header class="site-header">
-  <nav class="site-nav">
-    <a class="logo" href="https://syedzainulabideen.github.io/">
-      Syed Zainulabideen
-    </a>
-    <ul class="main-menu">
-      
-    </ul>
-  </nav>
-</header>
+    .nav__links li {
+      display: inline-block;
+      padding: 0px 20px;
+    }
 
+    .nav__links li a {
+      transition: all 0.3s ease 0s;
+    }
 
-<main class="content">
+    .nav__links li a:hover {
+      color: blueviolet;
+    }
 
+    button {
+      padding: 9px 25px;
+      background-color: blueviolet;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+    }
+
+    button:hover {
+      scale: 1.1;
+    }
+
+  </style>
+</html>
 
 
 
@@ -36,7 +101,6 @@
 	
 <footer>
 	<p>&copy;2022 Syed Zainulabideen</p>
-	<p>This is actually testeing, okay nice</p>
 </footer>
 
 </body>
