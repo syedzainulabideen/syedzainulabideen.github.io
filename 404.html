@@ -3,47 +3,35 @@
 
 <head lang="en">
     <meta charset="UTF-8">
-
-    
     <title>Syed Z. - iOS Engineer</title>
 
-    
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
-    
     <link rel="shortcut icon" href="/images/favicon.ico" title="Favicon" />
-
-    
     <link rel="stylesheet" href="/css/style.css">
-
-    
     <link rel="stylesheet" href="/css/namari-color.css">
-
-    
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/font-awesome.css">
-
-    
     <link href="/css/animate.css" rel="stylesheet" type="text/css">
-
-    
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-
-    
-    <div id="preloader">
-        <div id="status" class="la-ball-triangle-path">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    
-
+    <script>
+        window.onload = function () {
+          var span = document.createElement('span');
+        
+          span.className = 'fas';
+          span.style.display = 'none';
+          document.body.insertBefore(span, document.body.firstChild);
+          
+          alert(window.getComputedStyle(span, null).getPropertyValue('font-family'));
+            
+          document.body.removeChild(span);
+        };
+        </script>
     <div class="page-border" data-wow-duration="0.7s" data-wow-delay="0.2s">
         <div class="top-border wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"></div>
         <div class="right-border wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
@@ -53,7 +41,6 @@
     </div>
 
     <div id="wrapper">
-
         <header id="banner" class="scrollto clearfix" data-enllax-ratio=".5">
             <div id="header" class="nav-collapse">
                 <div class="row clearfix">
@@ -79,7 +66,7 @@
                             <ul class="social-icons">
                                 <li>
                                     <a target="_blank" title="Facebook" href="https://www.facebook.com/username">
-                                        <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
+                                        <i class="fas fas-facebook fas-1x"></i><span>Facebook</span>
                                     </a>
                                 </li>
                                 <li>
@@ -139,38 +126,31 @@
                 </div>
             </div>
 
-            
             <div id="banner-content" class="row clearfix">
 
-                <div class="col-38">
+    <div class="col-38">
 
-                    <div class="section-heading">
-                        <h1>SYED ZAINULABIDEEN</h1>
-                        <h2>As a highly experienced and passionate iOS engineer with over 10 years of experience in
-                            developing high-quality mobile apps, I have a strong track record of successfully turning
-                            valuable ideas into exceptional products. In addition to my expertise in iOS development, I
-                            am also actively exploring new technologies such as Server Side Swift and React Native to
-                            further enhance my skills and abilities. My ultimate goal is to continue delivering
-                            innovative and impactful solutions that exceed expectations and drive business success..</h2>
-                    </div>
+        <div class="section-heading">
+            <h1>SYED ZAINULABIDEEN</h1>
+            <h2>As a highly experienced and passionate iOS engineer with over 10 years of experience in
+                developing high-quality mobile apps, I have a strong track record of successfully turning
+                valuable ideas into exceptional products. In addition to my expertise in iOS development, I
+                am also actively exploring new technologies such as Server Side Swift and React Native to
+                further enhance my skills and abilities. My ultimate goal is to continue delivering
+                innovative and impactful solutions that exceed expectations and drive business success..</h2>
+        </div>
 
-                    
-                    <div>
-                        <a href="#" class="button" style="margin: 0px 5px; background-color: #d2b356; border-color: #d2b356; color: white;">HIRE ME</a>
-                        <a href="#" class="button" style="background-color: rgb(202, 202, 202); border-color: rgb(202, 202, 202); color: black;">DOWNLOAD RESUME</a>
-                    </div>
-                    
+        
+        <div>
+            <a href="#" class="button" style="margin: 0px 5px; background-color: #d2b356; border-color: #d2b356; color: white;">HIRE ME</a>
+            <a href="#" class="button" style="background-color: rgb(202, 202, 202); border-color: rgb(202, 202, 202); color: black;">DOWNLOAD RESUME</a>
+        </div>
+        
 
-                </div>
+    </div>
 
-            </div>
+</div>
         </header>
-
-
-
-
-
-
     </div>
 
     
@@ -199,7 +179,21 @@
 <p><a href="/">Go back to the home page</a></p>
 
 </main>
-	
+	  
+	  <link rel="stylesheet" href="/css/style.css">
+
+	  
+	  <link rel="stylesheet" href="/css/namari-color.css">
+  
+	  
+	  <link rel="stylesheet" href="/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="/css/font-awesome.css">
+  
+	  
+	  <link href="/css/animate.css" rel="stylesheet" type="text/css">
+  
+	  
+	  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
    
    <footer id="landing-footer" class="clearfix">
 	<div class="row clearfix">
@@ -217,7 +211,7 @@
 				
 				<blockquote class="col-3 testimonial classic">
 					<img src="images/user-images/user-1.jpg" alt="User" />
-					<q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+					<q style="color: white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 						labore
 						et dolore magna aliqua</q>
 					<footer>John Doe - Happy Customer</footer>
@@ -227,7 +221,7 @@
 				
 				<blockquote class="col-3 testimonial classic">
 					<img src="images/user-images/user-2.jpg" alt="User" />
-					<q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+					<q style="color: white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 						labore
 						et dolore magna aliqua</q>
 					<footer>Roslyn Doe - Happy Customer</footer>
@@ -237,7 +231,7 @@
 				
 				<blockquote class="col-3 testimonial classic">
 					<img src="images/user-images/user-3.jpg" alt="User" />
-					<q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+					<q style="color: white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 						labore
 						et dolore magna aliqua</q>
 					<footer>Thomas Doe - Happy Customer</footer>
