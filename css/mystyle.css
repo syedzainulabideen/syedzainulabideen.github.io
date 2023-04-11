@@ -61,3 +61,11 @@
   button:hover {
     scale: 1.1;
   }
+
+
+
+  #profileImage {
+    height: fit-content;
+    width: 50%;
+    background-color: blue;
+  }

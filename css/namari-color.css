@@ -124,10 +124,37 @@ a:hover, #header.nav-solid nav a:hover {
 /* Banner Background and Text Colors */
 
 #banner {
-    background: url("../images/banner-images/banner-image-2.jpg") no-repeat center top;
-    background-size:cover;
+    background: none;
+    background-size:contain;
 }
 
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    #banner {
+      background-image: none;
+  }
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+    #banner {
+      background-image: none;
+  }
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
+    #bgimg {
+      background-image: none;
+  }
+
+}
 
 /*------------------------------------------------------------------------------------------*/
 /* 5. Typography */
