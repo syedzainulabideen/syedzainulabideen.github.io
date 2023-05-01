@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syed Z.</title>
+    
+    <link rel="stylesheet" href="https://syedzainulabideen.github.io/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Roboto+Slab:wght@400;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-background-color text-white">
+    <div class="px-8 md:px-14 lg:px-20 xl:px-24 mx-auto flex-auto max-w-7xl">
+        <header class="sticky top-0 z-30 w-full bg-background-color">
+    <nav class="py-4">
+        <div class="mx-auto flex justify-between">
+            <div class="flex items-center">
+                <a href="/"><h1 class="font-inter font-bold text-lg" style="color: white;">SZ</h1></a>
+            </div>
+            <div class="space-x-5">
+                <a class="rounded-full py-2 text-white text-sm font-sans" href="/portfolio">Portfolio</a>
+                <a class="rounded-full py-2 text-white text-sm font-sans" href="/posts">Blog</a>
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+        <div style="margin:25px;">
+            <h1>My First Post</h1>
+            <div style="color:grey; font-size:16px;">Thursday, Dec 15, 2022</div>
+            <div style="color:grey; font-size:16px;"></div>
+            <div class="text-content"><p>Hey Readers, In this tutorial we are looking into the Integration of Stripe’s In-Person Payment using Stripe Reader M2. Below are the quick overview of steps, we will be following.</p>
+<h3 id="steps-overview">Steps Overview:</h3>
+<hr>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Create Locations:</strong> To organize your readers, you need to create locations e.g. Every reader is linked to the specific location of your physical store location.</p>
+<p>You can either create location using <a href="https://dashboard.stripe.com/terminal/locations">Stripe Dashboard</a> or using the Terminal’s SDK by following <a href="https://stripe.com/docs/terminal/fleet/locations#create-a-location-with-standard-connect">here</a></p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Create Connection Token:</strong> First you need to create connection token for the Terminal SDK. Best approach for this step is to create connection token on backend and access created token through API on frontend.</p>
+<p>Detail instructions on this as below:</p>
+<ol>
+<li>
+<p>Create new iOS app and install Stripe Terminal SDK using Cocopods.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>pod <span style="color:#960050;background-color:#1e0010">&#39;</span>StripeTerminal<span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">~&gt;</span> <span style="color:#ae81ff">2.0</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Also add permissions to the .plist file, as per Apple requirements.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>&lt;key&gt;NSLocationWhenInUseUsageDescription<span style="color:#f92672">&lt;/</span>key&gt;&lt;string&gt;Location access <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">required</span> <span style="color:#66d9ef">in</span> order to accept payments.<span style="color:#f92672">&lt;/</span>string&gt;
+</span></span><span style="display:flex;"><span>&lt;key&gt;UIBackgroundModes<span style="color:#f92672">&lt;/</span>key&gt;&lt;array&gt;&lt;string&gt;bluetooth<span style="color:#f92672">-</span>central<span style="color:#f92672">&lt;/</span>string&gt;<span style="color:#f92672">&lt;/</span>array&gt;
+</span></span><span style="display:flex;"><span>&lt;key&gt;NSBluetoothPeripheralUsageDescription<span style="color:#f92672">&lt;/</span>key&gt;&lt;string&gt;Bluetooth access <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">required</span> <span style="color:#66d9ef">in</span> order to connect to supported bluetooth card readers.<span style="color:#f92672">&lt;/</span>string&gt;
+</span></span><span style="display:flex;"><span>&lt;key&gt;NSBluetoothAlwaysUsageDescription<span style="color:#f92672">&lt;/</span>key&gt;&lt;string&gt;This app uses Bluetooth to connect to supported card readers.<span style="color:#f92672">&lt;/</span>string&gt;
+</span></span></code></pre></div></li>
+<li>
+<p>Create a new swift file as APIClient.swift and add below contents to newly created file. Make sure you have selected the current Location, where Reader is being used.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">StripeTerminal</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">APIClient</span>: NSObject, ConnectionTokenProvider {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">let</span> shared = APIClient()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">fetchConnectionToken</span>(<span style="color:#66d9ef">_</span> completion: @escaping ConnectionTokenCompletionBlock) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> selectedLocationId = <span style="color:#e6db74">&#34;{{CURRENT_SELECTED_LOCATION_ID}}&#34;</span> <span style="color:#66d9ef">else</span> { <span style="color:#66d9ef">return</span> } 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">let</span> url = <span style="color:#e6db74">&#34;https://example.com/v1/payments/terminal/token&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> validURL = URL(string: url) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            completion(<span style="color:#66d9ef">nil</span>, NSError.createError(<span style="color:#ae81ff">2000</span>, domain: <span style="color:#e6db74">&#34;com.stripe-terminal-ios.example&#34;</span>, description: <span style="color:#e6db74">&#34;Invalid URL&#34;</span>))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> config = URLSessionConfiguration.<span style="color:#66d9ef">default</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> session = URLSession(configuration: config)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> request = URLRequest(url: validURL)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/* Id of the current selected Location, where you are using the terminal */</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> body = [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;location&#34;</span>: selectedLocationId
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>        request.httpMethod = <span style="color:#e6db74">&#34;POST&#34;</span>
+</span></span><span style="display:flex;"><span>        request.addValue(<span style="color:#e6db74">&#34;{{AUTHORIZATION_KEY_VALUE}}&#34;</span>, forHTTPHeaderField: <span style="color:#e6db74">&#34;Authorization&#34;</span>)
+</span></span><span style="display:flex;"><span>        request.addValue(<span style="color:#e6db74">&#34;application/json&#34;</span>, forHTTPHeaderField: <span style="color:#e6db74">&#34;Content-Type&#34;</span>)
+</span></span><span style="display:flex;"><span>        request.httpBody = body.jsonData
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> task = session.dataTask(with: request) { (data, response, error) <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validData = data {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">do</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">let</span> responseObject = <span style="color:#66d9ef">try</span> JSONDecoder().decode(CreateConnectTokenResponse.<span style="color:#66d9ef">self</span>, from: validData)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> secret = responseObject.data?.secret {
+</span></span><span style="display:flex;"><span>                        completion(secret, <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                        completion(<span style="color:#66d9ef">nil</span>, NSError.createError(<span style="color:#ae81ff">2000</span>, domain: <span style="color:#e6db74">&#34;com.stripe-terminal-ios.example&#34;</span>, description: <span style="color:#e6db74">&#34;Missing &#39;secret&#39; in ConnectionToken JSON response&#34;</span>))
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                } <span style="color:#66d9ef">catch</span> {
+</span></span><span style="display:flex;"><span>                    completion(<span style="color:#66d9ef">nil</span>, NSError.createError(<span style="color:#ae81ff">2000</span>, domain: <span style="color:#e6db74">&#34;com.stripe-terminal-ios.example&#34;</span>, description: <span style="color:#e6db74">&#34;Unable to parse the response data.&#34;</span>))
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                completion(<span style="color:#66d9ef">nil</span>, NSError.createError(<span style="color:#ae81ff">1000</span>, domain: <span style="color:#e6db74">&#34;com.stripe-terminal-ios.example&#34;</span>, description: <span style="color:#e6db74">&#34;No data in response from ConnectionToken endpoint&#34;</span>))
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        task.resume()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>Now link above created class to the Stripe Terminal SDK in Appdelegate file, as below</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">application</span>(<span style="color:#66d9ef">_</span> application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = <span style="color:#66d9ef">nil</span>) -&gt; Bool {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// ----</span>
+</span></span><span style="display:flex;"><span>   Terminal.setTokenProvider(APIClient.shared)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// ----</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ol>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Discover and Connect with Reader:</strong> In this step we will be creating a shared class to control complete flow of the discovering, connecting and making payment.</p>
+<ol>
+<li>
+<p>Create new file TerminalManager.swift then add below content step wise.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">StripeTerminal</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TerminalManager</span>: NSObject, ObservableObject {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">let</span> shared = TerminalManager()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> connectedReader:Reader?
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>Add new property to handle the current connection status of the reader and try to discover readers if not already connected.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> currentConnectionStatus:ConnectionStatus = Terminal.shared.connectionStatus {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">didSet</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">switch</span> currentConnectionStatus {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> .notConnected:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">self</span>.connectedReader = <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> config = DiscoveryConfiguration(discoveryMethod: .bluetoothScan, simulated: <span style="color:#66d9ef">false</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">self</span>.discoverCancelable = Terminal.shared.discoverReaders(config, delegate: <span style="color:#66d9ef">self</span>) { error <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> error = error {
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34;**terminal-manager** discoverReaders failed: </span><span style="color:#e6db74">\(</span>error.localizedDescription<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> .connected:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Reader successfully connected.&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> .connecting:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">self</span>.connectedReader = <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>            @unknown <span style="color:#66d9ef">default</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div></li>
+<li>
+<p>Add below function in TerminalManager class and You need to call this function before proceed with Reader connection or payment, so Terminal SDK can be setup for delegates.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">setUpInitialReaderFlow</span>() {
+</span></span><span style="display:flex;"><span>    Terminal.shared.delegate = <span style="color:#66d9ef">self</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">self</span>.currentConnectionStatus = Terminal.shared.connectionStatus
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>To handle the discover result, you need to add delegates functions of the Terminal. Below delegate function didUpdateDiscoveredReaders is being used to get the discovered readers. If Reader is already setup with some location Id, you can use that otherwise you need to provide your current selected location’s id.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">TerminalManager</span>: DiscoveryDelegate  {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">terminal</span>(<span style="color:#66d9ef">_</span> terminal: Terminal, didUpdateDiscoveredReaders readers: [Reader]) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> selectedReader = readers.first <span style="color:#66d9ef">else</span> { <span style="color:#66d9ef">return</span> }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">guard</span> terminal.connectionStatus == .notConnected <span style="color:#66d9ef">else</span> { <span style="color:#66d9ef">return</span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> currentLocation = selectedReader.locationId ?? {{CURRENT_SELECTED_LOCATION_ID}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> connectionConfig = BluetoothConnectionConfiguration(
+</span></span><span style="display:flex;"><span>            locationId: currentLocation!
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        Terminal.shared.connectBluetoothReader(selectedReader, delegate: <span style="color:#66d9ef">self</span>, connectionConfig: connectionConfig) { reader, error <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> _ = reader {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">self</span>.connectedReader = reader
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> error = error {
+</span></span><span style="display:flex;"><span>							print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>error.localizedDescription<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Once you have successfully connected to the Reader, you can then proceed to collect payment from User. Details in next steps.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Creating Payment Intent:</strong>  As a best practice, we need to create payment on the server side using the amount, currency etc. And then fetch created Intent object using API. Add below API call in APIClient.swift class to fetch server created Payment Intent Response object.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">typealias</span> CreateIntentCompletion = ((ServiceIntentResponse.IntentDataClass?, String?) -&gt; Void)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">createPaymentIntent</span>(<span style="color:#66d9ef">_</span> amount:Int, completion: @escaping CreateIntentCompletion) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> url = <span style="color:#e6db74">&#34;https://example/com/v1/payments/terminal/create-intent&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> validURL = URL(string: url) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            completion(<span style="color:#66d9ef">nil</span>, <span style="color:#e6db74">&#34;Invalid URL&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> config = URLSessionConfiguration.<span style="color:#66d9ef">default</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> session = URLSession(configuration: config)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> request = URLRequest(url: validURL)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> body = [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;amount&#34;</span>: amount,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;currency&#34;</span>: <span style="color:#e6db74">&#34;usd&#34;</span>
+</span></span><span style="display:flex;"><span>        ] <span style="color:#66d9ef">as</span> [String : Any]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        request.httpMethod = <span style="color:#e6db74">&#34;POST&#34;</span>
+</span></span><span style="display:flex;"><span>        request.addValue(<span style="color:#e6db74">&#34;{{AUTHORIZATION_KEY_VALUE}}&#34;</span>, forHTTPHeaderField: <span style="color:#e6db74">&#34;Authorization&#34;</span>)
+</span></span><span style="display:flex;"><span>        request.addValue(<span style="color:#e6db74">&#34;application/json&#34;</span>, forHTTPHeaderField: <span style="color:#e6db74">&#34;Content-Type&#34;</span>)
+</span></span><span style="display:flex;"><span>        request.httpBody = body.jsonData
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> task = session.dataTask(with: request) { (data, response, error) <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validData = data {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">do</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">let</span> responseObject = <span style="color:#66d9ef">try</span> JSONDecoder().decode(ServiceIntentResponse.<span style="color:#66d9ef">self</span>, from: validData)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> object = responseObject.data, responseObject.status == <span style="color:#ae81ff">200</span> {
+</span></span><span style="display:flex;"><span>												<span style="color:#75715e">// need to save this created Payment Intent to use in next steps.</span>
+</span></span><span style="display:flex;"><span>                        AppViewModel.shared.createIntentResponse = object
+</span></span><span style="display:flex;"><span>                        completion(object, <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>                    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                        completion(<span style="color:#66d9ef">nil</span>, responseObject.message ?? <span style="color:#e6db74">&#34;Unable to process request, error code: </span><span style="color:#e6db74">\(</span>responseObject.status ?? <span style="color:#ae81ff">0</span><span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">catch</span>(<span style="color:#66d9ef">let</span> exception) {
+</span></span><span style="display:flex;"><span>                    completion(<span style="color:#66d9ef">nil</span>, exception.localizedDescription)
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                completion(<span style="color:#66d9ef">nil</span>, <span style="color:#e6db74">&#34;No data in response from ConnectionToken endpoint&#34;</span>)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        task.resume()
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div></li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Collect Payment Method:</strong> Once you successfully created and reterive the payment Intetn, now it’s time to ask User to Tap/Swipe/Insert the Card.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> selectedRate = {{AMOUNT_OF_SELECTED_RATE}} <span style="color:#66d9ef">else</span> { <span style="color:#66d9ef">return</span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>APIClient.shared.createPaymentIntent(selectedRate) { responseObject, errorString <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> validObject = responseObject <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Error while creating Payment Intent&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> jsonData = <span style="color:#66d9ef">try</span>? DictionaryEncoder.encode(validObject) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Unable to convert JSON to Payment Intent&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> paymentIntent = PaymentIntent.decodedObject(fromJSON:jsonData) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Unable to create Payment intent from response object&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Terminal.shared.collectPaymentMethod(paymentIntent) { collectResult, collectError <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> error = collectError {
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#34;Unable to create payment: </span><span style="color:#e6db74">\(</span>error.localizedDescription<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validPaymentIntent = collectResult {
+</span></span><span style="display:flex;"><span>								<span style="color:#75715e">// Next Step</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">self</span>.processPayment(validPaymentIntent)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span> }
+</span></span></code></pre></div></li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Processing Payment:</strong> After successfully collecting the Payment method, once User Tap/Swipe card on the Reader. You can now process the response Payment Intent, as below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>Terminal.shared.processPayment(paymentIntent) { processResult, processError <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> error = processError {
+</span></span><span style="display:flex;"><span>        print<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>error.localizedDescription<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> processPaymentPaymentIntent = processResult {
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;*** processPayment succeeded&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Capture Payment:</strong> Once you process the Payment Intent, final step would be to Capture the actual payment using that Payment Intent’s Id. And that will be done on Server using API call.</p>
+<p>Add below function to the APIClient.swift file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">capturePaymentIntent</span>(<span style="color:#66d9ef">_</span> paymentIntentId:String, completion: @escaping CapturePaymentCompletion) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> url = <span style="color:#e6db74">&#34;https://example.com/v1/payments/terminal/capture-intent&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> validURL = URL(string: url) <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            completion(<span style="color:#66d9ef">nil</span>, <span style="color:#e6db74">&#34;Invalid URL&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> config = URLSessionConfiguration.<span style="color:#66d9ef">default</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> session = URLSession(configuration: config)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> request = URLRequest(url: validURL)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> body = [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;payment_intent&#34;</span>: paymentIntentId
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>        request.httpMethod = <span style="color:#e6db74">&#34;POST&#34;</span>
+</span></span><span style="display:flex;"><span>        request.addValue(<span style="color:#e6db74">&#34;{{AUTHORIZATION_KEY_VALUE}}&#34;</span>, forHTTPHeaderField: <span style="color:#e6db74">&#34;Authorization&#34;</span>)
+</span></span><span style="display:flex;"><span>        request.addValue(<span style="color:#e6db74">&#34;application/json&#34;</span>, forHTTPHeaderField: <span style="color:#e6db74">&#34;Content-Type&#34;</span>)
+</span></span><span style="display:flex;"><span>        request.httpBody = body.jsonData
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> task = session.dataTask(with: request) { (data, response, error) <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validData = data {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">do</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">let</span> responseObject = <span style="color:#66d9ef">try</span> JSONDecoder().decode(ServiceIntentResponse.<span style="color:#66d9ef">self</span>, from: validData)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> object = responseObject.data, responseObject.status == <span style="color:#ae81ff">200</span> {
+</span></span><span style="display:flex;"><span>                        completion(object, <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>                    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                        completion(<span style="color:#66d9ef">nil</span>, responseObject.message ?? <span style="color:#e6db74">&#34;Unable to process request, error code: </span><span style="color:#e6db74">\(</span>responseObject.status ?? <span style="color:#ae81ff">0</span><span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">catch</span>(<span style="color:#66d9ef">let</span> exception) {
+</span></span><span style="display:flex;"><span>                    completion(<span style="color:#66d9ef">nil</span>, exception.localizedDescription)
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                completion(<span style="color:#66d9ef">nil</span>, <span style="color:#e6db74">&#34;No data in response from ConnectionToken endpoint&#34;</span>)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        task.resume()
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>That’s it, You have completed the basic step for the integration of Stripe Reader M2 to your iOS app. Cheers 🙂
+But..</p>
+<p>There are still some important points that we need to consider while implementing the above flow. I’ll explain them below.</p>
+</li>
+</ul>
+<h3 id="important-considerations">Important Considerations:</h3>
+<hr>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Reader Connectivity:</strong></p>
+<p>Stripe’s Reader M2 goes to the sleep mode in which you wouldn’t be able to discover it using the SDK functions. So in this case you have to manually press the side button on the Reader to awake it from sleep mode.</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>Cancellable Intents:</strong>
+Sometimes, Terminal SDK failed the process in any step, either Create Payment Intent or Collection Payment Method Intent. So if you want to retry that specific step again, you can reuse that Intent (for example user use different card if first card declined). But If you want to create new Intent again, so in this case you need to cancel already created Intents. (for example if user go back and change the selected Rate.)
+Below is the example of using cancellable intent for creation (if collectPayment already generated and user go back to select new rate). We first check if intent exist, cancel and then create payment intent again for new rate.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> collectPaymentCancelable:PaymentIntent?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> paymentCancelable = <span style="color:#66d9ef">self</span>.collectPaymentCancelable {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">self</span>.readerCurrentState = .cancelExistingIntent
+</span></span><span style="display:flex;"><span>    paymentCancelable.cancel { error <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> validError = error {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">self</span>.readerCurrentState = .error(message: validError.localizedDescription, showRetry: <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">self</span>.createNewPaymentIntent()
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">self</span>.createNewPaymentIntent()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><input disabled="" type="checkbox"> <strong>SDK is busy with other command:</strong></p>
+<p>More often you will get the error from SDK somthing like this ‘<strong>Could not execute discoverReaders because the SDK is busy with another command: discoverReaders.</strong> ’</p>
+<p>At this point you need to step back from code and reevaluate your whole flow. You shouldn’t call <strong>discoverReaders</strong> command if Terminal SDK is already executing this command. Second thing, in some other cases as we discussed above that If Terminal SDK is already waiting for User to swipe card after creating the Collect Payment Intent and if User go back at this point. We must cancel the Already created Intents. So when user come back to make payment, he shouldn’t get this error.</p>
+</li>
+</ul>
+<h3 id="final-words">Final Words:</h3>
+<hr>
+<p>So, Congratulation for making to the end of this tutorial. Hopefully you have got some headsup to move foward with Stripe Reader’s Integration with you iOS App. There must be some corner cases that still remains undiscussed in this tutorail. Let me know if you want me to cover any specific topic related to the Stripe Readers.</p>
+</div>
+        </div>
+        <div class="h-20 justify-center items-center flex">
+    <div>
+        <p class="text-skill-text">© 2023 Syed Zainulabideen</p>
+    </div>
+</div>
+    </div>
+</body>
+
+</html>

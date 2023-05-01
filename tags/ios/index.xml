@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Syed Zainulabideen</title>
-    <link>https://syedzainulabideen.github.io/</link>
-    <description>Recent content on Syed Zainulabideen</description>
+    <title>iOS on Syed Zainulabideen</title>
+    <link>https://syedzainulabideen.github.io/tags/ios/</link>
+    <description>Recent content in iOS on Syed Zainulabideen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Dec 2022 15:34:19 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Dec 2022 15:34:19 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Post</title>
       <link>https://syedzainulabideen.github.io/posts/my-first-post/</link>
@@ -16,15 +16,6 @@
       <description>Hey Readers, In this tutorial we are looking into the Integration of Stripe’s In-Person Payment using Stripe Reader M2. Below are the quick overview of steps, we will be following.
 Steps Overview: Create Locations: To organize your readers, you need to create locations e.g. Every reader is linked to the specific location of your physical store location.
 You can either create location using Stripe Dashboard or using the Terminal’s SDK by following here</description>
-    </item>
-    
-    <item>
-      <title>Portfolio</title>
-      <link>https://syedzainulabideen.github.io/portfolio/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://syedzainulabideen.github.io/portfolio/</guid>
-      <description></description>
     </item>
     
   </channel>
