@@ -6,7 +6,17 @@
     <description>Recent content on Syed Zainulabideen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Dec 2022 15:34:19 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 May 2023 17:43:19 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dependency Injection vs Dependency Inversion</title>
+      <link>https://syedzainulabideen.github.io/posts/dependency-injection-vs-dependency-inversion/</link>
+      <pubDate>Wed, 17 May 2023 17:43:19 +0500</pubDate>
+      
+      <guid>https://syedzainulabideen.github.io/posts/dependency-injection-vs-dependency-inversion/</guid>
+      <description>Dependency Injection vs Dependency Inversion Dependency injection and dependency inversion are two concepts used in software development to manage dependencies between different components of a system. While they are related, they have distinct purposes and approaches.
+Dependency injection is a design pattern that allows components to be loosely coupled by providing their dependencies from external sources. In other words, instead of hardcoding dependencies within a component, the dependencies are passed to it from the outside.</description>
+    </item>
+    
     <item>
       <title>My First Post</title>
       <link>https://syedzainulabideen.github.io/posts/my-first-post/</link>
