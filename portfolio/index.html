@@ -91,6 +91,9 @@
         </div>
     </nav>
     <script>
+        if (localStorage.theme === undefined) {
+            localStorage.theme = 'dark'
+        }
         if (localStorage.theme === 'dark') {
             setDarkTheme()
         } else {

@@ -92,6 +92,9 @@
         </div>
     </nav>
     <script>
+        if (localStorage.theme === undefined) {
+            localStorage.theme = 'dark'
+        }
         if (localStorage.theme === 'dark') {
             setDarkTheme()
         } else {
@@ -113,55 +116,55 @@
         </div>
         <div class="recent-posts py-4 text-white">
             
-            <div class="py-8 px-8 bg-section-color shadow rounded-xl space-y-4">
+            <div class="blog-post">
                 <div class="flex gap-2">
                     
                 </div>
                 <div class="space-y-1">
-                    <a href=""><h1 class="sub-heading">Core Concepts</h1></a>
-                    <a href=""><p class=" text-gray-400 line-clamp-5"></p></a>                    
+                    <a href=""><h1 class="post-title pb-2">Core Concepts</h1></a>
+                    <a href=""><p class="post-summary"></p></a>                    
                 </div>
                 <div class="flex justify-end">
-                    <h1>Wednesday, May 17, 2023</h1>
+                    <h1 class="post-date">Wednesday, May 17, 2023</h1>
                 </div>
             </div>
             
-            <div class="py-8 px-8 bg-section-color shadow rounded-xl space-y-4">
+            <div class="blog-post">
                 <div class="flex gap-2">
                     
                 </div>
                 <div class="space-y-1">
-                    <a href=""><h1 class="sub-heading">Programming</h1></a>
-                    <a href=""><p class=" text-gray-400 line-clamp-5"></p></a>                    
+                    <a href=""><h1 class="post-title pb-2">Programming</h1></a>
+                    <a href=""><p class="post-summary"></p></a>                    
                 </div>
                 <div class="flex justify-end">
-                    <h1>Wednesday, May 17, 2023</h1>
+                    <h1 class="post-date">Wednesday, May 17, 2023</h1>
                 </div>
             </div>
             
-            <div class="py-8 px-8 bg-section-color shadow rounded-xl space-y-4">
+            <div class="blog-post">
                 <div class="flex gap-2">
                     
                 </div>
                 <div class="space-y-1">
-                    <a href=""><h1 class="sub-heading">iOS</h1></a>
-                    <a href=""><p class=" text-gray-400 line-clamp-5"></p></a>                    
+                    <a href=""><h1 class="post-title pb-2">iOS</h1></a>
+                    <a href=""><p class="post-summary"></p></a>                    
                 </div>
                 <div class="flex justify-end">
-                    <h1>Thursday, Dec 15, 2022</h1>
+                    <h1 class="post-date">Thursday, Dec 15, 2022</h1>
                 </div>
             </div>
             
-            <div class="py-8 px-8 bg-section-color shadow rounded-xl space-y-4">
+            <div class="blog-post">
                 <div class="flex gap-2">
                     
                 </div>
                 <div class="space-y-1">
-                    <a href=""><h1 class="sub-heading">Stripe</h1></a>
-                    <a href=""><p class=" text-gray-400 line-clamp-5"></p></a>                    
+                    <a href=""><h1 class="post-title pb-2">Stripe</h1></a>
+                    <a href=""><p class="post-summary"></p></a>                    
                 </div>
                 <div class="flex justify-end">
-                    <h1>Thursday, Dec 15, 2022</h1>
+                    <h1 class="post-date">Thursday, Dec 15, 2022</h1>
                 </div>
             </div>
             
