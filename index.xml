@@ -6,23 +6,34 @@
     <description>Recent content on Syed Zainulabideen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 May 2023 17:43:19 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Aug 2023 10:20:00 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SOLID - Single Responsibility Principle (SRP)</title>
+      <link>https://syedzainulabideen.github.io/posts/solid-single-responsibility/</link>
+      <pubDate>Tue, 15 Aug 2023 10:20:00 +0500</pubDate>
+      
+      <guid>https://syedzainulabideen.github.io/posts/solid-single-responsibility/</guid>
+      <description>SRP states that a class should have only one reason to change or only one responsibility. In other words, a class should have a single, well-defined purpose.
+Let&amp;rsquo;s understand this concept with a quick example. Suppose we have a User class and also there are two functioanlities accociated with this class i.e. saveToDatabase and sendWelcomeEmail.
+Now condier the below code snippet that&amp;rsquo;s without the usage of SRP principle. We embedded the two functionality right into the User class.</description>
+    </item>
+    
     <item>
       <title>Dependency Injection vs Dependency Inversion</title>
       <link>https://syedzainulabideen.github.io/posts/dependency-injection-vs-dependency-inversion/</link>
       <pubDate>Wed, 17 May 2023 17:43:19 +0500</pubDate>
       
       <guid>https://syedzainulabideen.github.io/posts/dependency-injection-vs-dependency-inversion/</guid>
-      <description>Dependency Injection vs Dependency Inversion Dependency injection and dependency inversion are two concepts used in software development to manage dependencies between different components of a system. While they are related, they have distinct purposes and approaches.
-Dependency injection is a design pattern that allows components to be loosely coupled by providing their dependencies from external sources. In other words, instead of hardcoding dependencies within a component, the dependencies are passed to it from the outside.</description>
+      <description>Dependency injection and dependency inversion are two concepts used in software development to manage dependencies between different components of a system. While they are related, they have distinct purposes and approaches.
+Dependency injection is a design pattern that allows components to be loosely coupled by providing their dependencies from external sources. In other words, instead of hardcoding dependencies within a component, the dependencies are passed to it from the outside. This promotes flexibility, modularity, and easier testing.</description>
     </item>
     
     <item>
-      <title>My First Post</title>
-      <link>https://syedzainulabideen.github.io/posts/my-first-post/</link>
+      <title>Stripe Reader M2 integration with iOS</title>
+      <link>https://syedzainulabideen.github.io/posts/stripe-reader-m2-ios/</link>
       <pubDate>Thu, 15 Dec 2022 15:34:19 +0500</pubDate>
       
-      <guid>https://syedzainulabideen.github.io/posts/my-first-post/</guid>
+      <guid>https://syedzainulabideen.github.io/posts/stripe-reader-m2-ios/</guid>
       <description>Hey Readers, In this tutorial we are looking into the Integration of Stripe’s In-Person Payment using Stripe Reader M2. Below are the quick overview of steps, we will be following.
 Steps Overview: Create Locations: To organize your readers, you need to create locations e.g. Every reader is linked to the specific location of your physical store location.
 You can either create location using Stripe Dashboard or using the Terminal’s SDK by following here</description>

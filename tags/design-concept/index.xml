@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design Concept on Syed Zainulabideen</title>
+    <link>https://syedzainulabideen.github.io/tags/design-concept/</link>
+    <description>Recent content in Design Concept on Syed Zainulabideen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Aug 2023 10:20:00 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/tags/design-concept/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SOLID - Single Responsibility Principle (SRP)</title>
+      <link>https://syedzainulabideen.github.io/posts/solid-single-responsibility/</link>
+      <pubDate>Tue, 15 Aug 2023 10:20:00 +0500</pubDate>
+      
+      <guid>https://syedzainulabideen.github.io/posts/solid-single-responsibility/</guid>
+      <description>SRP states that a class should have only one reason to change or only one responsibility. In other words, a class should have a single, well-defined purpose.
+Let&amp;rsquo;s understand this concept with a quick example. Suppose we have a User class and also there are two functioanlities accociated with this class i.e. saveToDatabase and sendWelcomeEmail.
+Now condier the below code snippet that&amp;rsquo;s without the usage of SRP principle. We embedded the two functionality right into the User class.</description>
+    </item>
+    
+  </channel>
+</rss>

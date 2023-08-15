@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="dark">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syed Z.</title>
+    
+    <link rel="stylesheet" href="https://syedzainulabideen.github.io/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Roboto+Slab:wght@400;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <script>
+        function setDarkTheme() {
+            document.documentElement.classList.add('dark');
+            document.getElementsByClassName('light-theme')[0].style.display = "none";
+            document.getElementsByClassName('dark-theme')[0].style.display = "block";
+            localStorage.theme = "dark";
+        };
+
+        function setLightTheme() {
+            document.documentElement.classList.remove('dark');
+            document.getElementsByClassName('dark-theme')[0].style.display = "none";
+            document.getElementsByClassName('light-theme')[0].style.display = "block";
+            localStorage.theme = "light";
+        };
+
+        function onThemeSwitcherItemClick() {
+            const theme = localStorage.theme;
+            if (theme === "dark") {
+                setLightTheme();
+            } else {
+                setDarkTheme();
+            }
+        };
+    </script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NTZG8QQ4K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8NTZG8QQ4K');
+    </script>
+</head>
+
+<body class="bg-white dark:bg-background-color  text-gray-950 dark:text-white">
+    <div class="px-8 md:px-14 lg:px-20 xl:px-24 mx-auto flex-auto max-w-7xl">
+        <header class="sticky top-0 z-30 w-full bg-white dark:bg-background-color">
+    <nav class="py-4">
+        <div class="mx-auto flex justify-between">
+            <div class="flex items-center">
+                <a href="/">
+                    <h1 class="font-inter font-bold text-lg  text-gray-950 dark:text-white">SZ</h1>
+                </a>
+            </div>
+            <div class="flex flex-row justify-end space-x-5 items-center">
+                <a class="rounded-full py-2 text-sm font-sans  text-gray-950 dark:text-white" href="/portfolio">Portfolio</a>
+                <a class="rounded-full py-2 text-sm font-sans  text-gray-950 dark:text-white" href="/posts">Blog</a>
+
+                <div>
+                    <div class="dark-theme text-white">
+                        <button onclick="onThemeSwitcherItemClick()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="inline-block h-6 w-6">
+                                <path
+                                    d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="light-theme text-gray-950">
+                        <button onclick="onThemeSwitcherItemClick()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="inline-block h-6 w-6">
+                                <path fill-rule="evenodd"
+                                    d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+    <script>
+        if (localStorage.theme === undefined) {
+            localStorage.theme = 'dark'
+        }
+        if (localStorage.theme === 'dark') {
+            setDarkTheme()
+        } else {
+            setLightTheme()
+        };
+    </script>
+</header>
+
+        <div style="margin:25px;">
+            
+            <div style="color:grey; font-size:16px;">Tuesday, Aug 15, 2023</div>
+            <h1 class="post-heading">SOLID - Single Responsibility Principle (SRP)</h1>
+            <div style="color:grey; font-size:16px;"></div>
+            <div class="prose-extended"><p>SRP states that a class should have only one reason to change or only one responsibility. In other words, a class should have a single, well-defined purpose.</p>
+<p>Let&rsquo;s understand this concept with a quick example. Suppose we have a <code>User</code> class and also there are two functioanlities accociated with this class i.e. <code>saveToDatabase</code> and <code>sendWelcomeEmail</code>.</p>
+<p>Now condier the below code snippet that&rsquo;s without the usage of SRP principle. We embedded the two functionality right into the <code>User</code> class. Which leave the class more coupled and hard to add changes if requried.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> username: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> email: String
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(username: String, email: String) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.username = username
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.email = email
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">saveToDatabase</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Code to save user data to a database</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// This method handles both user-related logic and database interactions</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sendWelcomeEmail</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Code to send a welcome email to the user</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// This method handles both user-related logic and email sending</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And If we refactor above code by keeping SRP principle in mind. We first decouple the class responsiblities into further possible classes, like this below code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> username: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> email: String
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(username: String, email: String) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.username = username
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.email = email
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DatabaseManager</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">saveUser</span>(<span style="color:#66d9ef">_</span> user: User) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Code to save user data to a database</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailService</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sendWelcomeEmail</span>(to user: User) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Code to send a welcome email to the user</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>So now should have the idea about how SRP can helps us to write more flexible, clean and decoupled code.</p>
+<p>Let&rsquo;s take a more realistic example. As in most the Apps today, we have to write a <code>NetworkManager</code> class that helps to communicate us with remote servers to fetch or send data. And if your <code>NetworkManager</code> class do all the relevant steps for this whole process, then it would be the voilation of SRP principle. Like if <code>NetworkManager</code> class build the request using multiple parameters ( URL, QueryItems, HTTP method etc. ), send request, handle errors and parse response.</p>
+<p>A more sophisticated example to handle your network calls by adhering the SRP principle could be like the below code snippet. <em>( obviously this is just a example and should have more room for improvments )</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RequestManager</span>: NSObject, URLSessionTaskDelegate {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> currentSession: URLSession
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(currentSession: URLSession = .shared) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.currentSession = currentSession
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">performRequest</span>(<span style="color:#66d9ef">_</span> request: URLRequest) async <span style="color:#66d9ef">throws</span> -&gt; (Data, HTTPURLResponse) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> result: (data: Data, response: URLResponse) = <span style="color:#66d9ef">try</span> await currentSession.data(<span style="color:#66d9ef">for</span>: request, delegate: <span style="color:#66d9ef">self</span>)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> httpResponse = result.response <span style="color:#66d9ef">as</span>? HTTPURLResponse <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> AppError.invalidResponse
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (result.data, httpResponse)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ResponseHandler</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> dataParser: DataParser
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(dataParser: DataParser = JSONDataParser()) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.dataParser = dataParser
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">handleResponse</span>&lt;T: Decodable&gt;(data: Data, statusCode: Int) <span style="color:#66d9ef">throws</span> -&gt; T {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> httpStatusCode = HTTPStatusCode(statusCode)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">switch</span> httpStatusCode {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> .success:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">do</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">let</span> loginResponse: T = <span style="color:#66d9ef">try</span> dataParser.parseData(data: data)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> loginResponse
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">catch</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">throw</span> AppError.dataParsingFailed
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> .clientError, .serverError:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> AppError.httpError(httpStatusCode)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> .redirection:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> AppError.redirectionError
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> .unknown(<span style="color:#66d9ef">let</span> statusCode):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> AppError.unknownStatusCode(statusCode)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">HTTPStatusCode</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> success
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> redirection
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> clientError
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> serverError
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> unknown(Int)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(<span style="color:#66d9ef">_</span> statusCode: Int) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">switch</span> statusCode {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">200.</span>.&lt;<span style="color:#ae81ff">300</span>: <span style="color:#66d9ef">self</span> = .success
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">300.</span>.&lt;<span style="color:#ae81ff">400</span>: <span style="color:#66d9ef">self</span> = .redirection
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">400.</span>.&lt;<span style="color:#ae81ff">500</span>: <span style="color:#66d9ef">self</span> = .clientError
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">500.</span>.&lt;<span style="color:#ae81ff">600</span>: <span style="color:#66d9ef">self</span> = .serverError
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">default</span>: <span style="color:#66d9ef">self</span> = .unknown(statusCode)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>So in above example, we can observe that <code>RequestManager</code> class is only responible for send the input request to the server and make sure it has the valid response otherwise would throw <code>AppError.invalidResponse</code></p>
+<p>Likewise, <code>ResponseHandler</code> is only responsible for handling the response object and make sure to handle all the relevant cases before parsing.</p>
+<p><strong>Key Points:</strong></p>
+<p>Below are some key points of the SRP, how it can be beneficial for our codebase.</p>
+<ul>
+<li>When a class focuses on one responsibility, its implementation becomes clearer and easier to understand.</li>
+<li>Isolating responsibilities into separate classes promotes code modularity.</li>
+<li>Classes with a single responsibility are generally easier to test since their behavior is more focused.</li>
+</ul>
+</div>
+        </div>
+        <div class="h-20 justify-center items-center flex">
+    <div>
+        <p class="text-skill-text">© 2023 Syed Zainulabideen</p>
+    </div>
+</div>
+    </div>
+</body>
+
+</html>
