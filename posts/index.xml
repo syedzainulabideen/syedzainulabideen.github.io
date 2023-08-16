@@ -6,7 +6,17 @@
     <description>Recent content on Syed Zainulabideen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Aug 2023 10:20:00 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Aug 2023 09:36:00 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SOLID - Open Close Principle (OCP)</title>
+      <link>https://syedzainulabideen.github.io/posts/solid-open-close/</link>
+      <pubDate>Wed, 16 Aug 2023 09:36:00 +0500</pubDate>
+      
+      <guid>https://syedzainulabideen.github.io/posts/solid-open-close/</guid>
+      <description>OCP states that software entities (such as classes, modules, functions, etc.) should be open for extension but closed for modification. In simple words it means that once a entity is created and working as intended, its internal code should not be modified to add new features or behaviors.
+So how can then we add features or update the functionalities? And the answer is by extending the existing entities with by Subclassing, Extensions or Protocols/Interfaces etc.</description>
+    </item>
+    
     <item>
       <title>SOLID - Single Responsibility Principle (SRP)</title>
       <link>https://syedzainulabideen.github.io/posts/solid-single-responsibility/</link>
