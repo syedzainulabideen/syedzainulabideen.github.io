@@ -6,7 +6,18 @@
     <description>Recent content in Core on Syed Zainulabideen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Aug 2023 09:36:00 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/tags/core/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Aug 2023 09:25:00 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/tags/core/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SOLID: Liskov Substitution Principle (LSP)</title>
+      <link>https://syedzainulabideen.github.io/posts/solid-liskov-substitution/</link>
+      <pubDate>Thu, 17 Aug 2023 09:25:00 +0500</pubDate>
+      
+      <guid>https://syedzainulabideen.github.io/posts/solid-liskov-substitution/</guid>
+      <description>LSP states that objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.
+Subclasses should preserve the core functionalities provided by the Super classes and should not override or change them. Also subclasses should adhere the rules or contracts defined by the Super classes like method signatures, preconditions, postconditions etc.
+So let&amp;rsquo;s take an example to show how code can violate the LSP.</description>
+    </item>
+    
     <item>
       <title>SOLID - Open Close Principle (OCP)</title>
       <link>https://syedzainulabideen.github.io/posts/solid-open-close/</link>

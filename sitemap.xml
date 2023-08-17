@@ -3,25 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://syedzainulabideen.github.io/posts/</loc>
-    <lastmod>2023-08-16T09:36:00+05:00</lastmod>
+    <lastmod>2023-08-17T09:25:00+05:00</lastmod>
     <priority>0</priority>
   </url><url>
     <loc>https://syedzainulabideen.github.io/tags/core/</loc>
-    <lastmod>2023-08-16T09:36:00+05:00</lastmod>
+    <lastmod>2023-08-17T09:25:00+05:00</lastmod>
   </url><url>
     <loc>https://syedzainulabideen.github.io/tags/design-concept/</loc>
-    <lastmod>2023-08-16T09:36:00+05:00</lastmod>
+    <lastmod>2023-08-17T09:25:00+05:00</lastmod>
   </url><url>
     <loc>https://syedzainulabideen.github.io/tags/solid/</loc>
-    <lastmod>2023-08-16T09:36:00+05:00</lastmod>
+    <lastmod>2023-08-17T09:25:00+05:00</lastmod>
   </url><url>
-    <loc>https://syedzainulabideen.github.io/posts/solid-open-close/</loc>
-    <lastmod>2023-08-16T09:36:00+05:00</lastmod>
+    <loc>https://syedzainulabideen.github.io/posts/solid-liskov-substitution/</loc>
+    <lastmod>2023-08-17T09:25:00+05:00</lastmod>
   </url><url>
     <loc>https://syedzainulabideen.github.io/</loc>
-    <lastmod>2023-08-16T09:36:00+05:00</lastmod>
+    <lastmod>2023-08-17T09:25:00+05:00</lastmod>
   </url><url>
     <loc>https://syedzainulabideen.github.io/tags/</loc>
+    <lastmod>2023-08-17T09:25:00+05:00</lastmod>
+  </url><url>
+    <loc>https://syedzainulabideen.github.io/posts/solid-open-close/</loc>
     <lastmod>2023-08-16T09:36:00+05:00</lastmod>
   </url><url>
     <loc>https://syedzainulabideen.github.io/posts/solid-single-responsibility/</loc>
