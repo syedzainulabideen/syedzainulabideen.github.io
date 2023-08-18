@@ -1198,6 +1198,28 @@ video {
   color: rgb(3 7 18 / var(--tw-text-opacity));
 }
 
+.opensource-tag {
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(159 13 127 / var(--tw-bg-opacity));
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.opensource-tag:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(3 7 18 / var(--tw-text-opacity));
+}
+
 .text-content {
   text-overflow: clip;
   font-family: 'Inter', sans-serif;
@@ -1745,7 +1767,7 @@ video {
 
 /* Blog Posts */
 
-/*  */
+/* Open Source */
 
 /*  */
 
