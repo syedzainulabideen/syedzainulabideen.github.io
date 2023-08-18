@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="dark">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syed Z.</title>
+    
+    <link rel="stylesheet" href="https://syedzainulabideen.github.io/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Roboto+Slab:wght@400;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <script>
+        function setDarkTheme() {
+            document.documentElement.classList.add('dark');
+            document.getElementsByClassName('light-theme')[0].style.display = "none";
+            document.getElementsByClassName('dark-theme')[0].style.display = "block";
+            localStorage.theme = "dark";
+        };
+
+        function setLightTheme() {
+            document.documentElement.classList.remove('dark');
+            document.getElementsByClassName('dark-theme')[0].style.display = "none";
+            document.getElementsByClassName('light-theme')[0].style.display = "block";
+            localStorage.theme = "light";
+        };
+
+        function onThemeSwitcherItemClick() {
+            const theme = localStorage.theme;
+            if (theme === "dark") {
+                setLightTheme();
+            } else {
+                setDarkTheme();
+            }
+        };
+    </script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NTZG8QQ4K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8NTZG8QQ4K');
+    </script>
+</head>
+
+<body class="bg-white dark:bg-background-color  text-gray-950 dark:text-white">
+    <div class="px-8 md:px-14 lg:px-20 xl:px-24 mx-auto flex-auto max-w-7xl">
+        <header class="sticky top-0 z-30 w-full bg-white dark:bg-background-color">
+    <nav class="py-4">
+        <div class="mx-auto flex justify-between">
+            <div class="flex items-center">
+                <a href="/">
+                    <h1 class="font-inter font-bold text-lg  text-gray-950 dark:text-white">SZ</h1>
+                </a>
+            </div>
+            <div class="flex flex-row justify-end space-x-5 items-center">
+                <a class="rounded-full py-2 text-sm font-sans  text-gray-950 dark:text-white" href="/portfolio">Portfolio</a>
+                <a class="rounded-full py-2 text-sm font-sans  text-gray-950 dark:text-white" href="/posts">Blog</a>
+
+                <div>
+                    <div class="dark-theme text-white">
+                        <button onclick="onThemeSwitcherItemClick()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="inline-block h-6 w-6">
+                                <path
+                                    d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="light-theme text-gray-950">
+                        <button onclick="onThemeSwitcherItemClick()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="inline-block h-6 w-6">
+                                <path fill-rule="evenodd"
+                                    d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+    <script>
+        if (localStorage.theme === undefined) {
+            localStorage.theme = 'dark'
+        }
+        if (localStorage.theme === 'dark') {
+            setDarkTheme()
+        } else {
+            setLightTheme()
+        };
+    </script>
+</header>
+
+        <div style="margin:25px;">
+            
+            <div style="color:grey; font-size:16px;">Friday, Aug 18, 2023</div>
+            <h1 class="post-heading">SOLID - Dependency Inversion Principle (DIP)</h1>
+            <div style="color:grey; font-size:16px;"></div>
+            <div class="prose-extended"><p>The Dependency Inversion Principle (DIP) states that high-level modules should not depend on low-level modules. Both should depend on abstractions. By DIP we aimed to reduce coupling between high-level and low-level classes or components by introducing an abstraction layer between them.</p>
+<p>So one can think, what does tight coupling or dependency between high and low level modules means? Let me explain, Tight coupling occurs when there is a strong, direct relationship between two modules. Like the high-level modules use or call functions, methods, or classes from the low-level modules directly.</p>
+<p>A code example that does not adhere to the Dependency Inversion Principle would look like the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cart</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> paymentMethod: CreditCardPayment = CreditCardPayment()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">checkout</span>(totalAmount: Double) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Logic to calculate cart total</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> paymentMethod.processPayment(amount: totalAmount) {
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Checkout successful.&#34;</span>)
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Payment processing failed.&#34;</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>} 
+</span></span></code></pre></div><p>You can observe multiple bad design decisions in above code snippet. Let discuss them one by one.</p>
+<p><strong>Direct Dependency on Concrete Implementation</strong>: In the <code>Cart</code> class, the <code>paymentMethod</code> property is directly instantiated as a <code>CreditCardPayment</code> object. This means that the <code>Cart</code> class is tightly coupled to the <code>CreditCardPayment</code> class.</p>
+<p><strong>Lack of Abstraction</strong>: The <code>Cart</code> class is directly dependent on the low-level <code>CreditCardPayment</code> implementation.</p>
+<p><strong>Inflexibility</strong>: By directly instantiating <code>CreditCardPayment</code> within the <code>Cart</code> class, it becomes challenging to switch to a different payment method, such as <code>PayPalPayment</code>, without modifying the <code>Cart</code> class.</p>
+<p>Let&rsquo;s restructure the previous code example to align with the Dependency Inversion Principle by utilizing Protocols and implementing Dependency Injection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">protocol</span> <span style="color:#a6e22e">PaymentMethod</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">processPayment</span>(amount: Double) -&gt; Bool
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CreditCardPayment</span>: PaymentMethod {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">processPayment</span>(amount: Double) -&gt; Bool {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Logic to process credit card payment</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Credit card payment processed.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PayPalPayment</span>: PaymentMethod {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">processPayment</span>(amount: Double) -&gt; Bool {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Logic to process PayPal payment</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;PayPal payment processed.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cart</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> paymentMethod: PaymentMethod
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(paymentMethod: PaymentMethod) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.paymentMethod = paymentMethod
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">checkout</span>(totalAmount: Double) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Logic to calculate cart total</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> paymentMethod.processPayment(amount: totalAmount) {
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Checkout successful.&#34;</span>)
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Payment processing failed.&#34;</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>So in above code snippet, We define a <code>PaymentMethod</code> protocol that represents the abstraction for processing payments. and  <code>Cart</code> class depends on the <code>PaymentMethod</code> abstraction through dependency injection in its constructor.</p>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>When new functionality needs to be added, it can often be done by creating new implementations of existing abstractions rather than modifying existing code.</li>
+<li>The DIP encourages the separation of concerns between different layers of the application, making the codebase more organized and comprehensible.</li>
+<li>It was introduced by Robert C. Martin.</li>
+</ul>
+</div>
+        </div>
+        <div class="h-20 justify-center items-center flex">
+    <div>
+        <p class="text-skill-text">© 2023 Syed Zainulabideen</p>
+    </div>
+</div>
+    </div>
+</body>
+
+</html>
