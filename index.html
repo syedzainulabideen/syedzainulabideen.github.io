@@ -350,6 +350,26 @@
                         <a class="blog-tag" href="/tags/design-concept">Design Concept</a> 
                     </div>
                     <div class="space-y-1">
+                        <a href="/posts/solid-interface-segregation"><h1 class="post-title pb-2">SOLID - Interface Segregation Principle (ISP)</h1></a>
+                        <a href="/posts/solid-interface-segregation"><p class="post-summary">ISP states that clients ( classes or modules that use an protocol ) should not be forced to depend on protocols they do not use. This implies that we need to structure our protocols or interfaces in a manner that precisely fulfills the requirements of the entities that adhere to them.
+Let&rsquo;s understand by a quick example. Suppose you have multiple payment methods available in your codebase.
+// Protocol for processing payments protocol PaymentMethod { func processPayment(amount: Double) func refundPayment(amount: Double) } // Classes that implement the protocol class CreditCardPayment: PaymentMethod { func processPayment(amount: Double) { print(&#34;Processing credit card payment of $\(amount)&#34;) // Actual payment processing logic for credit card } func refundPayment(amount: Double) { print(&#34;Refunding credit card payment of $\(amount)&#34;) // Actual refund processing logic for credit card } } class PayPalPayment: PaymentMethod { func processPayment(amount: Double) { print(&#34;Processing PayPal payment of $\(amount)&#34;) // Actual payment processing logic for PayPal } func refundPayment(amount: Double) { /* Imagine a scenario where there&#39;s no refund policy applicable to PayPal transactions.</p></a>                    
+                    </div>
+                    <div class="flex justify-end">
+                        <h1 class="post-date">Friday, Aug 18, 2023</h1>
+                    </div>
+                </div>
+                
+            
+                
+                <div class="blog-post">
+                    <div class="flex gap-2">
+                        
+                        <a class="blog-tag" href="/tags/solid">SOLID</a> 
+                        <a class="blog-tag" href="/tags/core">Core</a> 
+                        <a class="blog-tag" href="/tags/design-concept">Design Concept</a> 
+                    </div>
+                    <div class="space-y-1">
                         <a href="/posts/solid-liskov-substitution"><h1 class="post-title pb-2">SOLID: Liskov Substitution Principle (LSP)</h1></a>
                         <a href="/posts/solid-liskov-substitution"><p class="post-summary">LSP states that objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.
 Subclasses should preserve the core functionalities provided by the Super classes and should not override or change them. Also subclasses should adhere the rules or contracts defined by the Super classes like method signatures, preconditions, postconditions etc.
@@ -396,24 +416,6 @@ Now condier the below code snippet that&rsquo;s without the usage of SRP princip
                     </div>
                     <div class="flex justify-end">
                         <h1 class="post-date">Tuesday, Aug 15, 2023</h1>
-                    </div>
-                </div>
-                
-            
-                
-                <div class="blog-post">
-                    <div class="flex gap-2">
-                        
-                        <a class="blog-tag" href="/tags/core-concepts">Core Concepts</a> 
-                        <a class="blog-tag" href="/tags/programming">Programming</a> 
-                    </div>
-                    <div class="space-y-1">
-                        <a href="/posts/dependency-injection-vs-dependency-inversion"><h1 class="post-title pb-2">Dependency Injection vs Dependency Inversion</h1></a>
-                        <a href="/posts/dependency-injection-vs-dependency-inversion"><p class="post-summary">Dependency injection and dependency inversion are two concepts used in software development to manage dependencies between different components of a system. While they are related, they have distinct purposes and approaches.
-Dependency injection is a design pattern that allows components to be loosely coupled by providing their dependencies from external sources. In other words, instead of hardcoding dependencies within a component, the dependencies are passed to it from the outside. This promotes flexibility, modularity, and easier testing.</p></a>                    
-                    </div>
-                    <div class="flex justify-end">
-                        <h1 class="post-date">Wednesday, May 17, 2023</h1>
                     </div>
                 </div>
                 

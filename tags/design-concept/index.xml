@@ -6,7 +6,18 @@
     <description>Recent content in Design Concept on Syed Zainulabideen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Aug 2023 09:25:00 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/tags/design-concept/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Aug 2023 09:30:00 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/tags/design-concept/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SOLID - Interface Segregation Principle (ISP)</title>
+      <link>https://syedzainulabideen.github.io/posts/solid-interface-segregation/</link>
+      <pubDate>Fri, 18 Aug 2023 09:30:00 +0500</pubDate>
+      
+      <guid>https://syedzainulabideen.github.io/posts/solid-interface-segregation/</guid>
+      <description>ISP states that clients ( classes or modules that use an protocol ) should not be forced to depend on protocols they do not use. This implies that we need to structure our protocols or interfaces in a manner that precisely fulfills the requirements of the entities that adhere to them.
+Let&amp;rsquo;s understand by a quick example. Suppose you have multiple payment methods available in your codebase.
+// Protocol for processing payments protocol PaymentMethod { func processPayment(amount: Double) func refundPayment(amount: Double) } // Classes that implement the protocol class CreditCardPayment: PaymentMethod { func processPayment(amount: Double) { print(&amp;#34;Processing credit card payment of $\(amount)&amp;#34;) // Actual payment processing logic for credit card } func refundPayment(amount: Double) { print(&amp;#34;Refunding credit card payment of $\(amount)&amp;#34;) // Actual refund processing logic for credit card } } class PayPalPayment: PaymentMethod { func processPayment(amount: Double) { print(&amp;#34;Processing PayPal payment of $\(amount)&amp;#34;) // Actual payment processing logic for PayPal } func refundPayment(amount: Double) { /* Imagine a scenario where there&amp;#39;s no refund policy applicable to PayPal transactions.</description>
+    </item>
+    
     <item>
       <title>SOLID: Liskov Substitution Principle (LSP)</title>
       <link>https://syedzainulabideen.github.io/posts/solid-liskov-substitution/</link>
