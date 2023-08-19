@@ -6,7 +6,17 @@
     <description>Recent content on Syed Zainulabideen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Aug 2023 19:30:00 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Aug 2023 19:00:00 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SwiftData - An Introduction</title>
+      <link>https://syedzainulabideen.github.io/posts/swiftui-swiftdata/</link>
+      <pubDate>Sat, 19 Aug 2023 19:00:00 +0500</pubDate>
+      
+      <guid>https://syedzainulabideen.github.io/posts/swiftui-swiftdata/</guid>
+      <description>Kindly be aware that the provided code snippets rely on Xcode 15 beta 6. Consequently, there is a possibility of encountering syntax inconsistencies in forthcoming beta releases.
+Finally, during WWDC 2023, Apple made the decision to upgrade its primary persistence framework CoreData with SwiftData. This involved adopting a more robust framework that takes advantage of the recently introduced Macros system and other advanced language features for the purpose of data modelling and management.</description>
+    </item>
+    
     <item>
       <title>SOLID - Dependency Inversion Principle (DIP)</title>
       <link>https://syedzainulabideen.github.io/posts/solid-dependency-inversion/</link>

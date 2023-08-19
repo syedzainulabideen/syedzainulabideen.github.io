@@ -1065,6 +1065,31 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+code {
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+  padding: 0.25rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+:is(.dark code) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(43 42 44 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+code::before {
+  display: none;
+}
+
+code::after {
+  display: none;
+}
+
 .recent-posts {
   display: grid;
   gap: 1rem;
