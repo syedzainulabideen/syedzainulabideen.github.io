@@ -6,7 +6,18 @@
     <description>Recent content in SwiftUI on Syed Zainulabideen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Aug 2023 19:00:00 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/tags/swiftui/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Aug 2023 11:10:00 +0500</lastBuildDate><atom:link href="https://syedzainulabideen.github.io/tags/swiftui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SwiftUI - View Modifiers</title>
+      <link>https://syedzainulabideen.github.io/posts/swiftui-viewmodifiers/</link>
+      <pubDate>Mon, 21 Aug 2023 11:10:00 +0500</pubDate>
+      
+      <guid>https://syedzainulabideen.github.io/posts/swiftui-viewmodifiers/</guid>
+      <description>ViewModifier is a basically a protocol that used to encapsulate and apply a set of changes or modifications to a view. It has a body(content: Content) that accept a user-defined content and return some View after applying changes or modifications.
+It is very useful when you have a set of modifications like Stylings or Behaviours etc. and you want to apply them on multiple views without code being redundant.
+Let&amp;rsquo;s understand by an example.</description>
+    </item>
+    
     <item>
       <title>SwiftData - An Introduction</title>
       <link>https://syedzainulabideen.github.io/posts/swiftui-swiftdata/</link>
