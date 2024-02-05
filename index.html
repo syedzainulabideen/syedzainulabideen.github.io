@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="dark">
+
 <head>
 	<meta name="generator" content="Hugo 0.108.0">
 
@@ -10,10 +11,13 @@
     <link rel="stylesheet" href="https://syedzainulabideen.github.io/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Roboto+Slab:wght@400;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Pacifico&family=Roboto+Slab:wght@100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    
 
     <script>
         function setDarkTheme() {
@@ -51,18 +55,18 @@
 </head>
 
 <body class="bg-white dark:bg-background-color">
-    <div class="px-8 md:px-14 lg:px-20 xl:px-24 mx-auto flex-auto max-w-7xl">
-        <header class="sticky top-0 z-30 w-full bg-white dark:bg-background-color">
-    <nav class="py-4">
+    <div class="">
+        <header class="sticky top-0 z-30 space-y-4 bg-white dark:bg-background-color">
+    <nav class="px-8 py-4 mx-auto flex-auto container">
         <div class="mx-auto flex justify-between">
             <div class="flex items-center">
                 <a href="/">
-                    <h1 class="font-inter font-bold text-lg  text-gray-950 dark:text-white">SZ</h1>
+                    <h1 class="fa-solid fa-house font-inter font-light text-xl text-gray-950 dark:text-white"></h1>
                 </a>
             </div>
             <div class="flex flex-row justify-end space-x-5 items-center">
-                <a class="rounded-full py-2 text-sm font-sans  text-gray-950 dark:text-white" href="/portfolio">Portfolio</a>
-                <a class="rounded-full py-2 text-sm font-sans  text-gray-950 dark:text-white" href="/posts">Blog</a>
+                <a class="rounded-full py-2 text-lg  font-sans  text-gray-950 dark:text-white" href="/portfolio">Portfolio</a>
+                <a class="rounded-full py-2 text-lg  font-sans  text-gray-950 dark:text-white" href="/posts">Blog</a>
 
                 <div>
                     <div class="dark-theme text-white">
@@ -91,6 +95,7 @@
 
         </div>
     </nav>
+    
     <script>
         if (localStorage.theme === undefined) {
             localStorage.theme = 'dark'
@@ -102,239 +107,176 @@
         };
     </script>
 </header>
-        <div class="mx-auto flex-auto">
-    <div class="py-4 md:py-20 text-white space-y-4">
-        <div class="space-y-2">
-            <h1 class="text-content text-gray-400">Hello, I'm</h1>
-            <h1 class="name-title text-gray-950 dark:text-white">SYED</h1>
-            <h1 class="name-title text-gray-950 dark:text-white">ZAINULABIDEEN</h1>
-            <p class="text-content text-gray-400">Passionate about app development and user-centric design, I am an accomplished iOS developer with 10+ years of experience in creating intuitive and cutting-edge mobile applications. From conceptualization to implementation, I thrive on delivering innovative solutions that captivate users and drive business growth.</p>
-             <p class="text-content text-gray-400">I am excited to connect with like-minded professionals, startups, and organizations interested in creating groundbreaking iOS applications. If you're looking for a skilled iOS developer who is driven to make an impact, let's connect and explore potential opportunities.</p>
-        </div>
+        <div class="mx-auto flex-auto py-4 container">
+    <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class=" rounded-lg p-8">
+            <div class="space-y-2">
+                <h1 class="primaryHeading">Syed</h1>
+                <h1 class="primaryHeading">Zainulabideen</h1>
 
-        <div class="flex gap-x-5 py-4">
-            <a href="https://www.linkedin.com/in/syedzainulabideen/" class="fa-brands fa-linkedin text-2xl dark:text-white text-black"></a>
-            <a href="https://twitter.com/s_zainulabideen" class="fa-brands fa-twitter text-2xl dark:text-white text-black"></a>
-            <a href="https://github.com/syedzainulabideen" class="fa-brands fa-github text-2xl  dark:text-white text-black"></a>
-            <a href="mailto:syed_zainulabideen@yahoo.com" class="fa-solid fa-at text-2xl  dark:text-white text-black"></a>
+                <h1 class="secondaryHeading py-2">Tech Lead - Mobile</h1>
+                <p class="summaryContent ">Transforming Visions into Seamless Experiences: With over a decade
+                    of expertise in iOS development, I bring passion and
+                    precision to crafting captivating mobile applications. From ideation to execution, I specialize in
+                    delivering innovative
+                    solutions that not only meet user needs but also propel business success. Let's turn your ideas into
+                    extraordinary
+                    digital realities!</p>
+            </div>
+
+            <div class="flex gap-x-5 px-0 my-4">
+                <a href="https://www.linkedin.com/in/syedzainulabideen/"
+                    class="flex items-center justify-center bg-linkedin-button-bg text-white w-1/3 h-14 rounded-full">
+                    <div class="fa-brands fa-linkedin text-2xl dark:text-white text-white"></div>
+                    <p class="ml-2">LinkedIn</p>
+                </a>
+                <a href="https://github.com/syedzainulabideen"
+                    class="flex items-center justify-center bg-github-button-bg text-white w-1/3 h-14 rounded-full">
+                    <div class="fa-brands fa-github text-2xl dark:text-white text-white"></div>
+                    <p class="ml-2">Github</p>
+                </a>
+
+                
+
+                
+
+                
+
+            </div>
 
             
 
         </div>
-
-        <div>
-            <a href=".\resume.pdf"><button 
-                    class="rounded-md border-2 px-8 py-2  text-gray-950 dark:text-white text-lg font-sans border-black dark:border-white">Download
-                    Resume</button></a>
+        <div class="flex justify-end items-center p-8 xs:hidden md:block">
+            <img src="/images/profile.png" alt="" class="rounded-3xl shadow-2xl">
         </div>
-
     </div>
 
+
+
 </div>
-        <div class="flex-auto">
-    <div class="py-4 text-white">
-
-        <div class="mx-auto flex-auto">
-            <div class="py-4 md:py-10 text-white space-y-4">
-                <div class="space-y-3">
-                    <div>
-                        <h1 class="font-inter font-regular text-md text-gray-400">Technical</h1>
-                        <h1 class="font-inter font-bold text-3xl  text-gray-950 dark:text-white">Skills & Expertises</h1>
-                    </div>
-                    <div class="bg-gray-400 rounded-full w-14 h-2"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="gap-y-2">
-            <div class="flex flex-auto flex-wrap py-4 gap-x-2 gap-y-2">
-                <h1 class="skill">iOS Development</h1> 
-                <h1 class="skill">Objective-C</h1> 
-                <h1 class="skill">Swift</h1> 
-                <h1 class="skill">SwiftUI</h1> 
-                <h1 class="skill">Combine</h1> 
-                <h1 class="skill">Swift Concurrency</h1> 
-                <h1 class="skill">Core Data</h1> 
-                <h1 class="skill">Core Animation</h1> 
-                <h1 class="skill">CoreML/Vision</h1> 
-                <h1 class="skill">MLKit</h1>  
-                <h1 class="skill">RESTful APIs</h1>  
-                <h1 class="skill">HTML/ CSS</h1>  
-                <h1 class="skill">JavaScript/ TypeScript</h1> 
-                <h1 class="skill">Tailwind</h1>
-            </div>
-    
-            <div class="flex flex-auto flex-wrap py-4 gap-x-2 gap-y-2">
-                <h1 class="skill">Unit Testing</h1> 
-                <h1 class="skill">UI Testing</h1>
-                <h1 class="skill">Git</h1> 
-                <h1 class="skill">Github Actions</h1> 
-                <h1 class="skill">Design Patterns</h1>
-                <h1 class="skill">SOLID</h1> 
-                <h1 class="skill">Clean Code</h1> 
-                <h1 class="skill">MVVM</h1> 
-                <h1 class="skill">MVC</h1> 
-                <h1 class="skill">VIPER</h1> 
-                <h1 class="skill">Healthcare</h1> 
-                <h1 class="skill">Logistics</h1> 
-                <h1 class="skill">E-commerce</h1> 
-            </div>
-
-
-    
-            <div class="flex flex-auto flex-wrap py-4 gap-x-2 gap-y-2">
-                <h1 class="skill">Leadership</h1> 
-                <h1 class="skill">Team Management</h1>
-                <h1 class="skill">JIRA</h1> 
-                <h1 class="skill">Agile/ Scrum</h1> 
-                <h1 class="skill">Time Management</h1> 
-                <h1 class="skill">Kanban</h1> 
-                <h1 class="skill">Communication</h1> 
-            </div>
-
-        </div>
-
-    </div>
-</div>
-        <div class="mx-auto flex-auto">
-    <div class="py-4 text-white items-center">
-        <div class="mx-auto flex-auto">
-            <div class="py-4 md:py-10 text-white space-y-4">
-                <div class="space-y-3">
-                    <div>
-                        <h1 class="font-inter font-regular text-md text-gray-400">Companies</h1>
-                        <h1 class="font-inter font-bold text-3xl text-gray-950 dark:text-white">I Worked For.</h1>
-                    </div>
-                    <div class="bg-gray-400 rounded-full w-14 h-2"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="companies-grid py-4">
-            <div class="py-8 px-8 bg-light-bg-color dark:bg-section-color shadow rounded-xl space-y-4">
-                <img src="/images/darvis-dark.png" alt="" class="w-10 dark:invert">
-                <div class="space-y-1">
-                    <h1 class="sub-heading text-light-heading-color dark:text-white">Darvis</h1>
-                    <p class="text-light-text-color dark:text-gray-400 ">DARVIS is a technology-focused company that specializes in using machine
-                        learning (ML) and artificial intelligence (AI) to deliver innovative solutions that help
-                        businesses
-                        improve efficiency, increase productivity, and drive growth.</p>
-                </div>
-                <div class="flex justify-end">
-                    <a href="https://www.darvis.com">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 text-light-text-color dark:text-gray-400">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="py-8 px-8 bg-light-bg-color dark:bg-section-color shadow rounded-xl space-y-4">
-                <img src="/images/visionx.png" alt="" class="w-10">
-                <div class="space-y-1">
-                    <h1 class="sub-heading text-light-heading-color dark:text-white">VisionX</h1>
-                    <p class=" text-light-text-color dark:text-gray-400">VisionX is a cutting-edge startup specializing in augmented reality (AR),
-                        virtual reality (VR), and vision-based technologies. VisionX is at the forefront of innovation
-                        in
-                        the field, developing cutting-edge solutions.</p>
-                </div>
-                <div class="flex justify-end">
-                    <a href="https://visionx.io">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 text-light-text-color dark:text-gray-400">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="py-8 px-8 bg-light-bg-color dark:bg-section-color shadow rounded-xl space-y-4">
-                <img src="/images/mtbc.png" alt="" class="w-32">
-                <div class="space-y-1">
-                    <h1 class="sub-heading text-light-heading-color dark:text-white">CareCloud (MTBC)</h1>
-                    <p class=" text-light-text-color dark:text-gray-400">CareCloud is a healthcare technology company that provides a range of
-                        solutions included EHR, practice management, and RCM services, as well as telemedicine
-                        solutions, patient engagement tools, and data analytics services.</p>
-                </div>
-                <div class="flex justify-end">
-                    <a href="https://www.carecloud.com"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6  text-light-text-color dark:text-gray-400">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                        </svg></a>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-        <div class="flex-auto">
-    <div class="py-4 text-white items-center">
-        <div class="mx-auto flex-auto">
-            <div class="py-4 md:py-10 text-white space-y-4">
-                <div class="space-y-3">
-                    <div>
-                        <h1 class="font-inter font-regular text-md text-gray-400">Portfolio</h1>
-                        <h1 class="font-inter font-bold text-3xl text-gray-950 dark:text-white">Recent Projects</h1>
-                    </div>
-                    <div class="bg-gray-400 rounded-full w-14 h-2"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="justify-center flex py-4">
-            <div class="project-main">
+        <div class="mx-auto flex-auto container px-8 bg-green-000">
+    <div class="mx-auto flex-auto">
+        <div class="py-4 md:py-10 text-white">
+            <div class="space-y-3">
                 <div>
-                    <img src="/images/portoflio/portfolio-1.png" alt="" class="">
+                    <h1 class="sectionInfoHeading">Technical</h1>
+                    <h1 class="sectionHeading">Skills & Expertise</h1>
                 </div>
-                <div class="flex space-y-8 flex-col">
-                    <div class="space-y-2">
-                        <h1 class="sub-heading">VisionX</h1>
-                        <div>
-                            <p class=" text-gray-400">This is great to use when varying icon widths (e.g. a tall but
-                                skinny
-                                icon atop a wide but short icon) would throw off vertical alignment.
-                                There is background color on the icon so you can see the fixed width and also bumped up
-                                the
-                                font-size of the parent element.</p>
-                            <p class=" text-gray-400">This is great to use when varying icon widths (e.g. a tall but
-                                skinny
-                                icon atop a wide but short icon) would throw off vertical alignment.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-end">
-                        <div class="action-button gap-x-2 flex justify-center items-center">
-                            <p>See details</p>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
+                <div class="section-heading-bar"></div>
             </div>
+        </div>
+    </div>
+
+    <div class="gap-y-2">
+        <div class="flex flex-auto flex-wrap py-4 gap-x-2 gap-y-2">
+            <h1 class="skill">iOS Development</h1>
+            <h1 class="skill">Objective-C</h1>
+            <h1 class="skill">Swift</h1>
+            <h1 class="skill">SwiftUI</h1>
+            <h1 class="skill">Combine</h1>
+            <h1 class="skill">Swift Concurrency</h1>
+            <h1 class="skill">Core Data</h1>
+            <h1 class="skill">Core Animation</h1>
+            <h1 class="skill">CoreML/Vision</h1>
+            <h1 class="skill">MLKit</h1>
+            <h1 class="skill">RESTful APIs</h1>
+            <h1 class="skill">HTML/ CSS</h1>
+            <h1 class="skill">JavaScript/ TypeScript</h1>
+            <h1 class="skill">Tailwind</h1>
+        </div>
+
+        <div class="flex flex-auto flex-wrap py-4 gap-x-2 gap-y-2">
+            <h1 class="skill">Unit Testing</h1>
+            <h1 class="skill">UI Testing</h1>
+            <h1 class="skill">Git</h1>
+            <h1 class="skill">Github Actions</h1>
+            <h1 class="skill">Design Patterns</h1>
+            <h1 class="skill">SOLID</h1>
+            <h1 class="skill">Clean Code</h1>
+            <h1 class="skill">MVVM</h1>
+            <h1 class="skill">MVC</h1>
+            <h1 class="skill">VIPER</h1>
+            <h1 class="skill">Healthcare</h1>
+            <h1 class="skill">Logistics</h1>
+            <h1 class="skill">E-commerce</h1>
+        </div>
+
+
+
+        <div class="flex flex-auto flex-wrap py-4 gap-x-2 gap-y-2">
+            <h1 class="skill">Leadership</h1>
+            <h1 class="skill">Team Management</h1>
+            <h1 class="skill">JIRA</h1>
+            <h1 class="skill">Agile/ Scrum</h1>
+            <h1 class="skill">Time Management</h1>
+            <h1 class="skill">Kanban</h1>
+            <h1 class="skill">Communication</h1>
         </div>
 
     </div>
 </div>
-        <div class="flex-auto">
+        
+        <div class="mx-auto flex-auto  px-8 bg-yellow-000 container">
+    <div class="mx-auto flex-auto">
+        <div class="py-4 md:py-10 text-white space-y-4">
+            <div class="space-y-3">
+                <div>
+                    <h1 class="sectionInfoHeading">Portfolio</h1>
+                    <h1 class="sectionHeading">Recent Projects</h1>
+                </div>
+                <div class="section-heading-bar"></div>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-cols-2 gap-8 ">
+        <div class="flex items-start p-8 shadow-sm rounded-lg subcontiner">
+            <img src="/images/portoflio/portfolio-1.png" alt="" class="flex-shrink-0">
+            
+            <div class="ml-4">
+                <h1 class="sub-heading">VisionX</h1>
+                <div class="space-y-2">
+                    <p class="text-gray-400">This is great to use when varying icon widths (e.g. a tall but skinny icon
+                        atop a
+                        wide but short icon) would throw off vertical alignment. There is background color on the icon
+                        so you
+                        can see the fixed width and also bumped up the font-size of the parent element.</p>
+                    <p class="text-gray-400">This is great to use when varying icon widths (e.g. a tall but skinny icon
+                        atop a
+                        wide but short icon) would throw off vertical alignment.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-start p-8 shadow-sm rounded-lg subcontiner">
+            <img src="/images/portoflio/portfolio-1.png" alt="" class="flex-shrink-0">
+            
+            <div class="ml-4">
+                <h1 class="sub-heading">VisionX</h1>
+                <div class="space-y-2">
+                    <p class="text-gray-400">This is great to use when varying icon widths (e.g. a tall but skinny icon
+                        atop a
+                        wide but short icon) would throw off vertical alignment. There is background color on the icon
+                        so you
+                        can see the fixed width and also bumped up the font-size of the parent element.</p>
+                    <p class="text-gray-400">This is great to use when varying icon widths (e.g. a tall but skinny icon
+                        atop a
+                        wide but short icon) would throw off vertical alignment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="mx-auto flex-auto  px-8 bg-yellow-000 container">
     
     <div class="py-4 text-white items-center">
         <div class="mx-auto flex-auto">
             <div class="py-4 md:py-10 text-white space-y-4">
                 <div class="space-y-3">
                     <div>
-                        <h1 class="font-inter font-regular text-md text-gray-400">Blog</h1>
-                        <h1 class="font-inter font-bold text-3xl text-gray-950 dark:text-white">Recent Posts</h1>
+                        <h1 class="sectionInfoHeading">Blog</h1>
+                        <h1 class="sectionHeading">Recent Posts</h1>
                     </div>
-                    <div class="bg-gray-400 rounded-full w-14 h-2"></div>
+                    <div class="section-heading-bar"></div>
                 </div>
             </div>
         </div>
@@ -416,37 +358,52 @@ Finally, during WWDC 2023, Apple made the decision to upgrade its primary persis
         </div>
     </div>
 </div>
-        <div class="flex-auto">
-    
-    <div class="py-4 text-white items-center">
+        <div class="mx-auto flex-auto  px-8 bg-yellow-000 container">
+
+    <div class="py-4 text-white items-center ">
         <div class="mx-auto flex-auto">
             <div class="py-4 md:py-10 text-white space-y-4">
                 <div class="space-y-3">
                     <div>
-                        <h1 class="font-inter font-regular text-md text-gray-400">Contributions</h1>
-                        <h1 class="font-inter font-bold text-3xl text-gray-950 dark:text-white">Open Source</h1>
+                        <h1 class="sectionInfoHeading">Contributions</h1>
+                        <h1 class="sectionHeading">Open Source</h1>
                     </div>
-                    <div class="bg-gray-400 rounded-full w-14 h-2"></div>
+                    <div class="section-heading-bar"></div>
                 </div>
             </div>
         </div>
 
         <div class="recent-posts py-4">
             <div class="blog-post">
-                   
+
                 <div class="space-y-1">
                     <img src="/images/coding-black.png" alt="" class="w-10 dark:invert gap-y-2">
-                    <a href="https://github.com/syedzainulabideen/SToastView"><h1 class="post-title pb-2">SToastView</h1></a>
-                    <a href="https://github.com/syedzainulabideen/SToastView"><p class="post-summary">Easily display informative and user-friendly toast messages in your Swift iOS applications with this repository's lightweight and customizable solution.</p></a>                    
+                    <a href="https://github.com/syedzainulabideen/SToastView">
+                        <h1 class="post-title pb-2">SToastView</h1>
+                    </a>
+                    <a href="https://github.com/syedzainulabideen/SToastView">
+                        <p class="post-summary">Easily display informative and user-friendly toast messages in your
+                            Swift iOS applications with this repository's lightweight and customizable solution.</p>
+                    </a>
                 </div>
                 <div class="flex gap-2">
                     <h1 class="opensource-tag">Swift</h1>
                     <h1 class="opensource-tag">Github</h1>
                 </div>
-            </div>         
+            </div>
         </div>
     </div>
 </div>
+
+<style>
+    .custom-shape {
+        background-color: #3490dc;
+         
+        clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 75%);
+         
+        padding: 20px;
+    }
+</style>
         <div class="h-20 justify-center items-center flex">
     <div>
         <p class="text-skill-text">© 2023 Syed Zainulabideen</p>
