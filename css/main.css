@@ -5,108 +5,63 @@
 /* Blog Posts */
 @layer components {
     .prose-extended {
-        @apply prose 
-        max-w-none 
-        dark:text-white 
-        dark:prose-headings:text-white 
-        dark:prose-strong:text-white
-        dark:prose-code:text-white
-        dark:prose-a:text-white
-        prose-code:text-black
+        @apply prose max-w-none dark:text-white dark:prose-headings:text-white dark:prose-strong:text-white dark:prose-code:text-white dark:prose-a:text-white prose-code:text-black
     }
 
-    .name-title {
-        @apply font-roboto-slab font-black xxs:text-3xl sm:text-4xl md:text-5xl;
+    .sub-title {
+        @apply font-roboto-slab font-bold xxs:text-xl sm:text-3xl md:text-4xl lg:text-5xl;
     }
 
     .prose-extended .highlight {
-        @apply 
-        dark:bg-transparent
+        @apply dark:bg-transparent
     }
 
     .prose-extended .highlight pre {
-        @apply
-         bg-neutral-100 dark:bg-dark-bg !important
+        @apply bg-neutral-100 dark:bg-dark-bg !important
     }
 
     .prose-extended p code {
-        @apply
-         dark:text-white 
-         text-black
-         bg-neutral-100 dark:bg-dark-bg
-         font-bold
-         p-1
-         rounded-lg         
+        @apply dark:text-white text-black bg-neutral-100 dark:bg-dark-bg font-bold p-1 rounded-lg
     }
 
     code {
-        @apply
-         dark:text-white 
-         text-black
-         bg-neutral-100 dark:bg-dark-bg
-         font-bold
-         p-1
-         rounded-lg         
+        @apply dark:text-white text-black bg-neutral-100 dark:bg-dark-bg font-bold p-1 rounded-lg
     }
 
     code::before {
         display: none;
     }
-    
+
     code::after {
         display: none;
     }
+
     .recent-posts {
-        @apply grid 
-        xxs:grid-cols-1
-        xs:grid-cols-1 
-        sm:grid-cols-1
-        md:grid-cols-2
-        lg:grid-cols-2
-        gap-4
+        @apply grid xxs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4
     }
 
     .post-title {
-        @apply 
-        font-inter 
-        font-semibold
-        text-light-text-blog-title dark:text-white
+        @apply font-inter font-semibold text-light-text-blog-title dark:text-white
     }
 
     .post-heading {
-        @apply 
-        font-inter 
-        font-semibold
-        text-2xl
-        text-light-text-blog-title dark:text-white
+        @apply font-inter font-semibold text-2xl text-light-text-blog-title dark:text-white
     }
 
     .post-summary {
-        @apply 
-        font-light 
-        line-clamp-5
-        text-base
-        text-light-text-blog-title dark:text-white
+        @apply font-light line-clamp-5 text-base text-light-text-blog-title dark:text-white
     }
 
     .post-date {
-        @apply
-        text-gray-400
-        dark:text-white
-        text-sm
+        @apply text-gray-400 dark:text-white text-sm
     }
 
     .blog-post {
-        @apply
-        py-8 px-8 
-        bg-light-bg-post-color
-        dark:bg-section-color 
-        rounded-xl 
-        space-y-4
+        @apply py-8 px-8 bg-light-bg-post-color dark:bg-section-color rounded-xl space-y-4
     }
 
     .blog-tag {
-        @apply rounded-full bg-light-text-blog-tag-bg text-white font-normal text-sm px-5 py-2  hover:bg-gray-200 hover:text-gray-950;
+        @apply rounded-full bg-light-text-blog-tag-bg text-white font-normal text-sm px-5 py-2 hover:bg-gray-200 hover:text-gray-950;
     }
 
 }
@@ -114,57 +69,66 @@
 /* Open Source */
 @layer components {
     .opensource-tag {
-        @apply rounded-full bg-color-opensource-tag text-white font-normal text-sm px-5 py-2  hover:bg-gray-200 hover:text-gray-950;
+        @apply rounded-full bg-color-opensource-tag text-white font-normal text-sm px-5 py-2 hover:bg-gray-200 hover:text-gray-950;
+    }
+}
+
+/* Section */
+@layer components {
+    .container {
+        @apply flex-auto max-w-7xl;
+    }
+
+    .subcontiner {
+        @apply bg-subcontiner dark:bg-subcontainer-dark
+    }
+
+    .sectionHeading {
+        @apply font-inter font-bold text-3xl text-sectionHeading dark:text-sectionHeading-dark;
+    }
+
+    .sectionInfoHeading {
+        @apply font-inter text-black dark:text-white;
+    }
+
+    .section-heading-bar {
+        @apply bg-gray-400 rounded-full w-14 h-2;
+    }
+}
+
+@layer components {
+    .primaryHeading {
+        @apply font-roboto-slab font-black xxs:text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-gray-950 dark:text-white
+    }
+
+    .secondaryHeading {
+        @apply font-inter font-semibold xxs:text-xl sm:text-3xl md:text-4xl lg:text-5xl text-red-400
+    }
+
+    .summaryContent {
+        @apply font-inter font-thin xxs:text-base xs:text-base sm:text-base md:text-base lg:text-lg text-clip text-black dark:text-white;
     }
 }
 
 /*  */
 @layer components {
-   
+
     .text-content {
-        @apply font-inter font-normal 
-        xxs:text-base
-        xs:text-base 
-        sm:text-base 
-        md:text-base 
-        lg:text-lg 
-        text-clip;
+        @apply font-inter font-normal xxs:text-base xs:text-base sm:text-base md:text-base lg:text-lg text-clip;
     }
 
     .companies-grid {
-        @apply grid 
-        xxs:grid-cols-1
-        xs:grid-cols-1 
-        sm:grid-cols-1
-        md:grid-cols-2
-        lg:grid-cols-3
-        gap-4
+        @apply grid xxs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4
     }
 
     .project-main {
-        @apply 
-        grid 
-        grid-cols-2
-        gap-4 
-        py-4
-        xxs:grid-cols-1
-        xs:grid-cols-1 
-        sm:grid-cols-1
-        md:grid-cols-2
-        xxs:w-full
-        md:w-2/3
+        @apply grid grid-cols-2 gap-4 py-4 xxs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xxs:w-full md:w-2/3
     }
 
-   
+
 
     .companies-products {
-        @apply grid 
-        xxs:grid-cols-1
-        xs:grid-cols-1 
-        sm:grid-cols-1
-        md:grid-cols-2
-        lg:grid-cols-2
-        gap-4
+        @apply grid xxs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4
     }
 
     .social-icon {
@@ -172,31 +136,22 @@
     }
 
     .sub-heading {
-        @apply 
-        font-inter 
-        font-semibold;
+        @apply font-inter font-semibold;
     }
 
     .skill {
-        @apply rounded-full
-        bg-white dark:bg-skill-bg 
-        border-black dark:border-transparent
-        border-2 dark:border-2
-        text-black dark:text-skill-text 
-        font-normal text-sm px-5 py-3  
-        hover:bg-black dark:hover:bg-gray-200
-        hover:text-white dark:hover:text-gray-950;
+        @apply rounded-full bg-white dark:bg-skill-bg border-black dark:border-transparent border-2 dark:border-2 text-black dark:text-skill-text font-normal text-sm px-5 py-3 hover:bg-black dark:hover:bg-gray-200 hover:text-white dark:hover:text-gray-950;
     }
 
     .tag {
-        @apply rounded-full bg-skill-bg text-skill-text font-normal text-sm px-5 py-1  hover:bg-gray-200 hover:text-gray-950;
+        @apply rounded-full bg-skill-bg text-skill-text font-normal text-sm px-5 py-1 hover:bg-gray-200 hover:text-gray-950;
     }
 
     .skill-tag {
-        @apply rounded-full bg-light-text-blog-tag-bg text-white font-normal text-sm px-5 py-1  hover:bg-gray-200 hover:text-gray-950;
+        @apply rounded-full bg-light-text-blog-tag-bg text-white font-normal text-sm px-5 py-1 hover:bg-gray-200 hover:text-gray-950;
     }
 
     .action-button {
         @apply rounded-full px-4 py-2 bg-blue-800 text-white
     }
-  }
+}
