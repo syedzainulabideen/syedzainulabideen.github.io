@@ -1189,6 +1189,41 @@ code::after {
   }
 }
 
+.recent-projects {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 320px) {
+  .recent-projects {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 414px) {
+  .recent-projects {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 640px) {
+  .recent-projects {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .recent-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .recent-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .post-title {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
@@ -1265,6 +1300,27 @@ code::after {
   background-color: rgb(34 34 35 / var(--tw-bg-opacity));
 }
 
+.portfolio-post > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.portfolio-post {
+  border-radius: 0.75rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 246 246 / var(--tw-bg-opacity));
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+:is(.dark .portfolio-post) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 34 35 / var(--tw-bg-opacity));
+}
+
 .blog-tag {
   border-radius: 9999px;
   --tw-bg-opacity: 1;
@@ -1303,6 +1359,28 @@ code::after {
 }
 
 .opensource-tag:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(3 7 18 / var(--tw-text-opacity));
+}
+
+.portfolio-tag {
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(159 13 127 / var(--tw-bg-opacity));
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.portfolio-tag:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
@@ -1913,11 +1991,6 @@ code::after {
   background-color: rgb(64 162 227 / var(--tw-bg-opacity));
 }
 
-.bg-section-color {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 34 35 / var(--tw-bg-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1954,6 +2027,10 @@ code::after {
 
 .pb-2 {
   padding-bottom: 0.5rem;
+}
+
+.align-bottom {
+  vertical-align: bottom;
 }
 
 .font-inter {
