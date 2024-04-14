@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="">
+<html class="light">
 
 <head>
 	<meta name="generator" content="Hugo 0.108.0">
@@ -21,31 +21,6 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
-
-    <script>
-        function setDarkTheme() {
-            document.documentElement.classList.add('dark');
-            document.getElementsByClassName('light-theme')[0].style.display = "none";
-            document.getElementsByClassName('dark-theme')[0].style.display = "block";
-            localStorage.theme = "dark";
-        };
-
-        function setLightTheme() {
-            document.documentElement.classList.remove('dark');
-            document.getElementsByClassName('dark-theme')[0].style.display = "none";
-            document.getElementsByClassName('light-theme')[0].style.display = "block";
-            localStorage.theme = "light";
-        };
-
-        function onThemeSwitcherItemClick() {
-            const theme = localStorage.theme;
-            if (theme === "dark") {
-                setLightTheme();
-            } else {
-                setDarkTheme();
-            }
-        };
-    </script>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NTZG8QQ4K"></script>
     <script>
@@ -57,9 +32,10 @@
     </script>
 </head>
 
-<body class="bg-white dark:bg-background-color">
+<body class="bg-white p-8 ">
     <div class="">
-        <header class="sticky top-0 z-30 space-y-4 bg-white dark:bg-background-color">
+        <div class="mx-auto flex-auto py-4 main-container space-y-4">
+            <header class="sticky top-0 z-30 space-y-4 bg-white dark:bg-background-color">
     <nav class="px-8 py-4 mx-auto flex-auto container">
         <div class="mx-auto flex justify-between">
             <div class="flex items-center">
@@ -84,27 +60,10 @@
         };
     </script>
 </header>
-        <div class="mx-auto flex-auto py-4 container space-y-4">
-            <div class="grid sm:grid-cols-1 md:grid-cols-2 space-x-6">
-                <div class="bg-white-100 p-4 rounded-2xl">
-    <h1 class="primaryHeading">Syed Zainulabideen</h1>
-    <h1 class="secondaryHeading">Technical Lead - Mobile</h1>
-
-    <hr class="h-px my-4 bg-gray-200 border-0">
-    <p class="summaryContent py-2">With over a decade of experience as a seasoned iOS Engineer proficient in
-        Objective-C, Swift, and JavaScript, I have
-        successfully led development teams in various industries, achieving 100% team satisfaction. Specializing in
-        innovative
-        solutions and leveraging cross-platform technologies like Swift & SwiftUI, I've delivered impactful projects in
-        healthcare,
-        e-commerce, computer vision, logistics, and news sectors.</p>
-</div>
-
-
-                <div class="space-y-6">
-                    <div class="bg-gray-50 shadow-md p-4 rounded-md justify-between items-center flex flex-auto">
-    <p class="font-inter text-xl">Say Hello!</p>
-    <div class="flex space-x-4">
+            <div class="bg-white-100 rounded-2xl">
+    <h1 class="name-title">Syed Zainulabideen</h1>
+    <h1 class="secondaryHeading py-2">Technical Lead - Mobile</h1>
+    <div class="flex space-x-4 py-2">
         <a href="https://www.linkedin.com/in/syedzainulabideen/" target="_blank">
             <img src="/images/ic-linkedin.png" alt="" class="w-6 h-6">
         </a>
@@ -115,10 +74,16 @@
             <img src="/images/ic-github.png" alt="" class="w-6 h-6">
         </a>
     </div>
-</div>
-                    <div class="bg-gray-50 shadow-md p-4 rounded-md">
-    <p class="font-inter text-xl">Top Skills</p>
-    <hr class="h-px my-2 bg-gray-200 border-0">
+
+    <p class="summaryContent py-2">With over a decade of experience as a seasoned iOS Engineer proficient in
+        Objective-C, Swift, and JavaScript, I have
+        successfully led development teams in various industries, achieving 100% team satisfaction. Specializing in
+        innovative
+        solutions and leveraging latest technologies like Swift & SwiftUI, Combine etc., I've delivered impactful
+        projects in
+        healthcare,
+        e-commerce, computer vision, logistics, and news sectors.</p>
+    
     <div class="flex flex-auto flex-wrap py-4 gap-x-2 gap-y-2">
         <h1 class="top-skill">iOS Development</h1>
         <h1 class="top-skill">Objective-C / Swift</h1>
@@ -133,13 +98,25 @@
         <h1 class="top-skill">React Native / Javascript</h1>
         <h1 class="top-skill">Tailwind</h1>
     </div>
+
 </div>
+
+
+
+            <div class="h-5"></div>
+            <hr class="h-px my-4 bg-gray-200 border-0">
+            <div class="h-5"></div>
+            
+
+            <div class="mx-auto flex-auto bg-green-100 h-30 rounded-md px-4 py-4">
+                <div>
+                    <h1 class="font-inter font-regular text-md text-black">Personal</h1>
+                    <h1 class="font-inter font-bold text-3xl text-gray-950 dark:text-white">Apps & Projects</h1>
                 </div>
             </div>
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
 
-            <div class="grid sm:grid-cols-1 md:grid-cols-2 space-x-6">
-                <div class="space-y-6">
-                    <div class="flex subcontiner p-8 shadow-md rounded-lg bg-gray-50">
+                <div class="flex subcontiner p-8 shadow-md rounded-lg bg-gray-50">
     <div class="space-y-4">
         <div class="flex flex-auto justify-between items-center ">
             <div class="flex-auto flex items-center">
@@ -181,7 +158,7 @@
     </div>
 
 </div>
-                    <div class="flex subcontiner p-8 shadow-md rounded-lg bg-gray-50">
+                <div class="flex subcontiner p-8 shadow-md rounded-lg bg-gray-50">
     <div class="space-y-4">
         <div class="flex flex-auto justify-between items-center">
             <div class="flex-auto flex items-center">
@@ -222,7 +199,7 @@
     </div>
 
 </div>
-                    <div class="flex subcontiner p-8 shadow-md rounded-lg bg-gray-50">
+                <div class="flex subcontiner p-8 shadow-md rounded-lg bg-gray-50">
     <div class="space-y-4">
         <div class="flex flex-auto justify-between items-center ">
             <div class="flex-auto flex items-center">
@@ -265,43 +242,20 @@
     </div>
 
 </div>
-                    <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
-    <div class="flex flex-auto justify-between items-center">
-        <div class="flex-auto flex items-center">
-            <img src="/images/portoflio/crown-logo.png" alt="" class="w-14 h-14 rounded-xl">
-            <h1 class="project-title pl-4">Crown Council</h1>
-        </div>
-        <div class="space-x-2 flex">
-            <h1 class="freelance-tag">Freelance</h1>
-        </div>
 
-    </div>
-    <hr class="h-px my-8 bg-gray-200 border-0">
-    <div class="space-y-2">
-        <p class="text-gray-800 summaryContent">An innovative app designed for dental professionals, focused on training
-            and education. Its primary objective is to
-            facilitate comprehensive training for dental professionals, ensuring they receive the highest quality
-            instruction and
-            resources.
-        </p>
-    </div>
-    <div class="">
-        <a href="https://apps.apple.com/us/app/crown-council/id1475432519" target="_blank"><img
-                src="/images/appstore.png" alt="" class="h-10">
-        </a>
-    </div>
-    <div class="flex flex-auto flex-wrap py-4 gap-x-2 gap-y-2">
-        <h1 class="work-tag">iOS</h1>
-        <h1 class="work-tag">Swift</h1>
-        <h1 class="work-tag">FireStore</h1>
-        <h1 class="work-tag">UIKit</h1>
-        <h1 class="work-tag">MVVM</h1>
-    </div>
-</div>
-
+                
+            </div>
+            <div class="h-5"></div>
+            <hr class="h-px my-4 bg-gray-200 border-0">
+            <div class="h-5"></div>
+            <div class="mx-auto flex-auto bg-blue-100 h-30 rounded-md px-4 py-4">
+                <div>
+                    <h1 class="font-inter font-regular text-md text-black">Work Experience</h1>
+                    <h1 class="font-inter font-bold text-3xl text-gray-950 dark:text-white">Companies' Products</h1>
                 </div>
-                <div class="space-y-6">
-                    <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
+            </div>
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
     <div class="flex flex-auto justify-between">
         <div class="flex-auto flex items-center">
             <img src="/images/portoflio/shipd-logo.png" alt="" class="w-14 h-14 rounded-xl">
@@ -340,7 +294,7 @@
         <h1 class="work-tag">MVVM</h1>
     </div>
 </div>
-                    <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
+                <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
     <div class="flex flex-auto justify-between">
         <div class="flex-auto flex items-center">
             <img src="/images/portoflio/talkphr-logo.png" alt="" class="w-14 h-14 rounded-xl">
@@ -384,7 +338,7 @@
         <h1 class="work-tag">RESTful APIs</h1>
     </div>
 </div>
-                    <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
+                <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
     <div class="flex flex-auto justify-between">
         <div class="flex-auto flex items-center">
             <img src="/images/portoflio/sba-logo.png" alt="" class="w-14 h-14 rounded-xl">
@@ -425,7 +379,7 @@
         <h1 class="work-tag">MVVM</h1>
     </div>
 </div>
-                    <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
+                <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
     <div class="flex flex-auto justify-between">
         <div class="flex-auto flex items-center">
             <img src="/images/portoflio/moreno-logo.png" alt="" class="w-14 h-14 rounded-xl">
@@ -466,7 +420,20 @@
         <h1 class="work-tag">MVVM</h1>
     </div>
 </div>
-                    <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
+            </div>
+
+
+            <div class="h-5"></div>
+            <hr class="h-px my-4 bg-gray-200 border-0">
+            <div class="h-5"></div>
+            <div class="mx-auto flex-auto bg-yellow-100 h-30 rounded-md px-4 py-4">
+                <div>
+                    <h1 class="font-inter font-regular text-md text-black">Client's</h1>
+                    <h1 class="font-inter font-bold text-3xl text-gray-950 dark:text-white">Freelance Apps</h1>
+                </div>
+            </div>
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
     <div class="flex flex-auto justify-between">
         <div class="flex-auto flex items-center">
             <img src="/images/portoflio/pgsa-logo.png" alt="" class="w-14 h-14 rounded-xl">
@@ -497,7 +464,7 @@
         <h1 class="work-tag">MVVM</h1>
     </div>
 </div>
-                    <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
+                <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
     <div class="flex flex-auto justify-between">
         <div class="flex-auto flex items-center">
             <img src="/images/portoflio/propak-logo.jpg" alt="" class="w-14 h-14 rounded-xl">
@@ -530,8 +497,39 @@
         <h1 class="work-tag">MVVM</h1>
     </div>
 </div>
+                <div class="py-8 px-8 portfolio-post shadow-md rounded-xl space-y-4 bg-gray-50">
+    <div class="flex flex-auto justify-between items-center">
+        <div class="flex-auto flex items-center">
+            <img src="/images/portoflio/crown-logo.png" alt="" class="w-14 h-14 rounded-xl">
+            <h1 class="project-title pl-4">Crown Council</h1>
+        </div>
+        <div class="space-x-2 flex">
+            <h1 class="freelance-tag">Freelance</h1>
+        </div>
 
-                </div>
+    </div>
+    <hr class="h-px my-8 bg-gray-200 border-0">
+    <div class="space-y-2">
+        <p class="text-gray-800 summaryContent">An innovative app designed for dental professionals, focused on training
+            and education. Its primary objective is to
+            facilitate comprehensive training for dental professionals, ensuring they receive the highest quality
+            instruction and
+            resources.
+        </p>
+    </div>
+    <div class="">
+        <a href="https://apps.apple.com/us/app/crown-council/id1475432519" target="_blank"><img
+                src="/images/appstore.png" alt="" class="h-10">
+        </a>
+    </div>
+    <div class="flex flex-auto flex-wrap py-4 gap-x-2 gap-y-2">
+        <h1 class="work-tag">iOS</h1>
+        <h1 class="work-tag">Swift</h1>
+        <h1 class="work-tag">FireStore</h1>
+        <h1 class="work-tag">UIKit</h1>
+        <h1 class="work-tag">MVVM</h1>
+    </div>
+</div>
             </div>
 
         </div>

@@ -19,31 +19,6 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
-
-    <script>
-        function setDarkTheme() {
-            document.documentElement.classList.add('dark');
-            document.getElementsByClassName('light-theme')[0].style.display = "none";
-            document.getElementsByClassName('dark-theme')[0].style.display = "block";
-            localStorage.theme = "dark";
-        };
-
-        function setLightTheme() {
-            document.documentElement.classList.remove('dark');
-            document.getElementsByClassName('dark-theme')[0].style.display = "none";
-            document.getElementsByClassName('light-theme')[0].style.display = "block";
-            localStorage.theme = "light";
-        };
-
-        function onThemeSwitcherItemClick() {
-            const theme = localStorage.theme;
-            if (theme === "dark") {
-                setLightTheme();
-            } else {
-                setDarkTheme();
-            }
-        };
-    </script>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NTZG8QQ4K"></script>
     <script>
